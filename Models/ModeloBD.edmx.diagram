@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5877f54696524b7eb3c2024d70873cec" Name="Diagram1">
+        <EntityTypeShape EntityType="bdcasaprestamosModel.asociados" Width="1.5" PointX="9.75" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.autorizacion" Width="1.5" PointX="12" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.avales" Width="1.5" PointX="12" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.colonias" Width="1.5" PointX="7.5" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.comprobante" Width="1.5" PointX="12" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.contabilidad" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.contabilidad_historico" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.domicilio" Width="1.5" PointX="12" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.estados" Width="1.5" PointX="0.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.fotosasociados" Width="1.5" PointX="12" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.fotospersonal" Width="1.5" PointX="15" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.identificacion" Width="1.5" PointX="12" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.localidades" Width="1.5" PointX="5.25" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.municipios" Width="1.5" PointX="3" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.operaciones" Width="1.5" PointX="14.25" PointY="37.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.pagos" Width="1.5" PointX="14.25" PointY="40.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.personal" Width="1.5" PointX="12.75" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.prestamos" Width="1.5" PointX="12" PointY="40.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.transacciones" Width="1.5" PointX="16.5" PointY="41.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.usuarios" Width="1.5" PointX="15" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_colonias" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_contabilidad" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_estados" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_generalpagos" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_generaltransacciones" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_localidades" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_municipios" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_pagos_pendientes_por_pagar" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_pagospendientes" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_personal" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_prestamos" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_prestamos_pendientes_por_pagar" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_socios" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_socios_buen_aval" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_socios_buen_historial" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_socios_con_pagos_pendientes" Width="1.5" PointX="8.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_tarjeton_asociados" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_tarjeton_pagos" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_tarjeton_prestamos" Width="1.5" PointX="14.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_usuarios" Width="1.5" PointX="2.75" PointY="15.75" IsExpanded="true" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKasociados1" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKasociados2" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKasociados3" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKasociados4" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKautorizacion" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKAvales" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKcomprobante" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKdomicilio" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKfotosasociados" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKidentificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKprestamos" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKcolonias" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKpersonal4" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKmunicipios" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKpersonal1" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKfotospersonal" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKlocalidades" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKpersonal3" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKpersonal2" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKtransacciones" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKpagos" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKpagostransacciones" ManuallyRouted="false" />
+        <AssociationConnector Association="bdcasaprestamosModel.FKusuarios" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_operaciones" Width="1.5" PointX="14.375" PointY="15.75" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_pagos_atrasados_socio" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="bdcasaprestamosModel.v_rep_pagos_socio" Width="1.5" PointX="17.375" PointY="12.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
