@@ -12,16 +12,12 @@ namespace Models
     using System;
     using System.Collections.Generic;
     
-    public partial class contabilidad_historico
+    public partial class log_sesiones
     {
-        public long con_id { get; set; }
-        public string con_concepto { get; set; }
-        public decimal con_monto { get; set; }
-        public decimal con_interes { get; set; }
-        public decimal con_total { get; set; }
-        public System.DateTime con_fecha { get; set; }
-        public string con_operacion { get; set; }
-        public System.DateTime con_fecharespaldo { get; set; }
-        public Nullable<int> con_operador { get; set; }
+        public long log_id { get; set; }
+        public string log_usuario { get; set; }
+        public string log_computadora { get; set; }
+        public Nullable<System.DateTime> log_fecha_sesion { get; set; }
+        public string log_accion { get; set; }
     }
 }

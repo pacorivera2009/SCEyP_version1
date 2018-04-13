@@ -12,7 +12,7 @@ namespace Models
     using System;
     using System.Collections.Generic;
     
-    public partial class contabilidad_historico
+    public partial class v_contabilidad_entrada
     {
         public long con_id { get; set; }
         public string con_concepto { get; set; }
@@ -21,7 +21,6 @@ namespace Models
         public decimal con_total { get; set; }
         public System.DateTime con_fecha { get; set; }
         public string con_operacion { get; set; }
-        public System.DateTime con_fecharespaldo { get; set; }
         public Nullable<int> con_operador { get; set; }
     }
 }

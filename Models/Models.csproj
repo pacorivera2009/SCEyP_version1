@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="accesos.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="asociados.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
@@ -68,7 +71,13 @@
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
     <Compile Include="ContabilidadTotalesModel.cs" />
+    <Compile Include="contabilidad_concepto.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="contabilidad_historico.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="control_sesiones.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
     <Compile Include="domicilio.cs">
@@ -87,6 +96,12 @@
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
     <Compile Include="localidades.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="log_sesiones.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="menu_sistema.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
     <Compile Include="ModeloBD.Context.cs">
@@ -121,18 +136,33 @@
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
     <Compile Include="PrestamosDataGridViewModel.cs" />
+    <Compile Include="privilegios_usuario.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportePagosGeneralDataGridView.cs" />
     <Compile Include="ReporteTransaccionesDataGridView.cs" />
     <Compile Include="ReporteContabilidadDataGridView.cs" />
     <Compile Include="SociosDataGridViewModel.cs" />
+    <Compile Include="submenu_sistema.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="transacciones.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
     <Compile Include="usuarios.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="v_contabilidad_entrada.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_contabilidad_salida.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="v_rep_colonias.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_rep_consulta_operaciones_realizadas.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
     <Compile Include="v_rep_contabilidad.cs">
@@ -141,10 +171,16 @@
     <Compile Include="v_rep_estados.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="v_rep_gastos_operacion.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="v_rep_generalpagos.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
     <Compile Include="v_rep_generaltransacciones.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_rep_historial_pagos_socio.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
     <Compile Include="v_rep_localidades.cs">
@@ -174,10 +210,19 @@
     <Compile Include="v_rep_prestamos.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="v_rep_prestamos_historial.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="v_rep_prestamos_pendientes_por_pagar.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
     <Compile Include="v_rep_socios.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_rep_socios_adeudo.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="v_rep_socios_adeudo_pagos_pendientes.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
     <Compile Include="v_rep_socios_buen_aval.cs">

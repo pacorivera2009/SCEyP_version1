@@ -21,5 +21,6 @@ namespace Models
         public decimal con_total { get; set; }
         public System.DateTime con_fecha { get; set; }
         public string con_operacion { get; set; }
+        public Nullable<int> con_operador { get; set; }
     }
 }

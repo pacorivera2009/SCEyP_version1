@@ -12,16 +12,15 @@ namespace Models
     using System;
     using System.Collections.Generic;
     
-    public partial class contabilidad_historico
+    public partial class v_rep_prestamos_historial
     {
-        public long con_id { get; set; }
-        public string con_concepto { get; set; }
-        public decimal con_monto { get; set; }
-        public decimal con_interes { get; set; }
-        public decimal con_total { get; set; }
-        public System.DateTime con_fecha { get; set; }
-        public string con_operacion { get; set; }
-        public System.DateTime con_fecharespaldo { get; set; }
-        public Nullable<int> con_operador { get; set; }
+        public long aso_id { get; set; }
+        public string aso_nombre { get; set; }
+        public long pre_id { get; set; }
+        public decimal pre_credito { get; set; }
+        public int pre_cuotas { get; set; }
+        public string pre_tipo { get; set; }
+        public int pre_interes { get; set; }
+        public System.DateTime pre_fechaprestamo { get; set; }
     }
 }

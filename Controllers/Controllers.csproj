@@ -92,6 +92,7 @@
     <Compile Include="ConsultasociosController.cs" />
     <Compile Include="ContabilidadController.cs" />
     <Compile Include="EstadisticasController.cs" />
+    <Compile Include="Historial_Pagos_Controller.cs" />
     <Compile Include="LoginController.cs" />
     <Compile Include="MenuController.cs" />
     <Compile Include="OperacionesController.cs" />

@@ -12,16 +12,16 @@ namespace Models
     using System;
     using System.Collections.Generic;
     
-    public partial class contabilidad_historico
+    public partial class menu_sistema
     {
-        public long con_id { get; set; }
-        public string con_concepto { get; set; }
-        public decimal con_monto { get; set; }
-        public decimal con_interes { get; set; }
-        public decimal con_total { get; set; }
-        public System.DateTime con_fecha { get; set; }
-        public string con_operacion { get; set; }
-        public System.DateTime con_fecharespaldo { get; set; }
-        public Nullable<int> con_operador { get; set; }
+        public menu_sistema()
+        {
+            this.submenu_sistema = new HashSet<submenu_sistema>();
+        }
+    
+        public long men_id { get; set; }
+        public string men_nombre { get; set; }
+    
+        public virtual ICollection<submenu_sistema> submenu_sistema { get; set; }
     }
 }
