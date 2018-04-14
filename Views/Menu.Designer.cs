@@ -124,7 +124,7 @@
             this.lblSubMenu44.Name = "lblSubMenu44";
             this.lblSubMenu44.Size = new System.Drawing.Size(160, 28);
             this.lblSubMenu44.TabIndex = 18;
-            this.lblSubMenu44.Text = "Contabilidad";
+            this.lblSubMenu44.Text = "Reportes";
             this.lblSubMenu44.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblSubMenu44.Click += new System.EventHandler(this.lblSubMenu44_Click);
             this.lblSubMenu44.MouseLeave += new System.EventHandler(this.lblSubMenu44_MouseLeave);

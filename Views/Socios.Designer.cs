@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Socios));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCambiarNIP = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblValidacion0 = new System.Windows.Forms.Label();
             this.txtClave = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnCambiarNIP = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
@@ -124,10 +124,6 @@
             this.lblValidacion17 = new System.Windows.Forms.Label();
             this.txtDomicilio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.btnGeolocalizador = new System.Windows.Forms.Button();
-            this.pbxCapturaDomicilio = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.lblValidacion25 = new System.Windows.Forms.Label();
@@ -195,9 +191,6 @@
             this.tabPage2.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.gbx2.SuspendLayout();
-            this.tabPage7.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCapturaDomicilio)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.groupBox15.SuspendLayout();
             this.groupBox12.SuspendLayout();
@@ -225,21 +218,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(741, 95);
             this.panel1.TabIndex = 0;
-            // 
-            // btnCambiarNIP
-            // 
-            this.btnCambiarNIP.Enabled = false;
-            this.btnCambiarNIP.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCambiarNIP.Image = ((System.Drawing.Image)(resources.GetObject("btnCambiarNIP.Image")));
-            this.btnCambiarNIP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCambiarNIP.Location = new System.Drawing.Point(567, 10);
-            this.btnCambiarNIP.Name = "btnCambiarNIP";
-            this.btnCambiarNIP.Size = new System.Drawing.Size(150, 32);
-            this.btnCambiarNIP.TabIndex = 1;
-            this.btnCambiarNIP.Text = "F8 - Modificar NIP";
-            this.btnCambiarNIP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCambiarNIP.UseVisualStyleBackColor = true;
-            this.btnCambiarNIP.Click += new System.EventHandler(this.btnCambiarNIP_Click);
             // 
             // groupBox1
             // 
@@ -308,11 +286,25 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Clave:";
             // 
+            // btnCambiarNIP
+            // 
+            this.btnCambiarNIP.Enabled = false;
+            this.btnCambiarNIP.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarNIP.Image = ((System.Drawing.Image)(resources.GetObject("btnCambiarNIP.Image")));
+            this.btnCambiarNIP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCambiarNIP.Location = new System.Drawing.Point(567, 10);
+            this.btnCambiarNIP.Name = "btnCambiarNIP";
+            this.btnCambiarNIP.Size = new System.Drawing.Size(150, 32);
+            this.btnCambiarNIP.TabIndex = 1;
+            this.btnCambiarNIP.Text = "F8 - Modificar NIP";
+            this.btnCambiarNIP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCambiarNIP.UseVisualStyleBackColor = true;
+            this.btnCambiarNIP.Click += new System.EventHandler(this.btnCambiarNIP_Click);
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1427,52 +1419,6 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Domicilio:";
             // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.groupBox10);
-            this.tabPage7.Location = new System.Drawing.Point(4, 25);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(726, 522);
-            this.tabPage7.TabIndex = 7;
-            this.tabPage7.Text = "DOMICILIO (CAPTURA DE PANTALLA)";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.btnGeolocalizador);
-            this.groupBox10.Controls.Add(this.pbxCapturaDomicilio);
-            this.groupBox10.Location = new System.Drawing.Point(11, 20);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(702, 482);
-            this.groupBox10.TabIndex = 1;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "CAPTURA DEL DOMICILIO";
-            // 
-            // btnGeolocalizador
-            // 
-            this.btnGeolocalizador.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnGeolocalizador.Image = ((System.Drawing.Image)(resources.GetObject("btnGeolocalizador.Image")));
-            this.btnGeolocalizador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGeolocalizador.Location = new System.Drawing.Point(553, 443);
-            this.btnGeolocalizador.Margin = new System.Windows.Forms.Padding(4);
-            this.btnGeolocalizador.Name = "btnGeolocalizador";
-            this.btnGeolocalizador.Size = new System.Drawing.Size(133, 32);
-            this.btnGeolocalizador.TabIndex = 2;
-            this.btnGeolocalizador.Text = "Geolocalizador";
-            this.btnGeolocalizador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGeolocalizador.UseVisualStyleBackColor = true;
-            this.btnGeolocalizador.Click += new System.EventHandler(this.btnGeolocalizador_Click);
-            // 
-            // pbxCapturaDomicilio
-            // 
-            this.pbxCapturaDomicilio.Location = new System.Drawing.Point(17, 31);
-            this.pbxCapturaDomicilio.Name = "pbxCapturaDomicilio";
-            this.pbxCapturaDomicilio.Size = new System.Drawing.Size(669, 405);
-            this.pbxCapturaDomicilio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxCapturaDomicilio.TabIndex = 0;
-            this.pbxCapturaDomicilio.TabStop = false;
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.groupBox15);
@@ -2162,9 +2108,6 @@
             this.groupBox14.PerformLayout();
             this.gbx2.ResumeLayout(false);
             this.gbx2.PerformLayout();
-            this.tabPage7.ResumeLayout(false);
-            this.groupBox10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCapturaDomicilio)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
@@ -2259,9 +2202,6 @@
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button btnEscanear3;
         private System.Windows.Forms.PictureBox pbxComprobante;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.PictureBox pbxCapturaDomicilio;
-        private System.Windows.Forms.Button btnGeolocalizador;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cbxSexo;
         private System.Windows.Forms.ComboBox cbxEstadoCivil;
@@ -2312,7 +2252,6 @@
         private System.Windows.Forms.MaskedTextBox txtTelefonoTrabajo;
         private System.Windows.Forms.Label lblValidacion23;
         private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.Label label32;

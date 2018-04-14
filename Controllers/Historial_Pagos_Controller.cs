@@ -16,5 +16,12 @@ namespace Controllers
                 return bd.v_rep_historial_pagos_socio.Where(a => a.aso_id == id).ToList();
             }
         }
+        public asociados asociados (long id)
+        {
+            using (var bd = new Conexion())
+            {
+                return bd.asociados.Where(a => a.aso_id == id).FirstOrDefault();
+            }
+        }
     }
 }

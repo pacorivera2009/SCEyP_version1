@@ -81,7 +81,7 @@ namespace Views
 
                 cbxEstado.SelectedIndex = -1;
 
-                dtpFechanacimiento.MaxDate = DateTime.Now;
+                //dtpFechanacimiento.MaxDate = DateTime.Now;
             }
             catch (Exception ex)
             {
@@ -444,33 +444,33 @@ namespace Views
 
         private void btnGeolocalizador_Click(object sender, EventArgs e)
         {
-            if (!(txtDomicilio.Text == "" && txtCodigo.Text == "" && cbxEstado.Text == "" && cbxLocalidad.Text == "" && cbxMunicipio.Text == "" && cbxColonia.Text == ""))
-            {
-                Geolocalizador geolocalizador = new Geolocalizador();
-                geolocalizador.domicilio = txtDomicilio.Text;
-                geolocalizador.codigopostal = txtCodigo.Text;
-                geolocalizador.colonia = cbxColonia.Text;
-                geolocalizador.ciudad = cbxLocalidad.Text;
-                geolocalizador.estado = cbxEstado.Text;
+            //if (!(txtDomicilio.Text == "" && txtCodigo.Text == "" && cbxEstado.Text == "" && cbxLocalidad.Text == "" && cbxMunicipio.Text == "" && cbxColonia.Text == ""))
+            //{
+            //    Geolocalizador geolocalizador = new Geolocalizador();
+            //    geolocalizador.domicilio = txtDomicilio.Text;
+            //    geolocalizador.codigopostal = txtCodigo.Text;
+            //    geolocalizador.colonia = cbxColonia.Text;
+            //    geolocalizador.ciudad = cbxLocalidad.Text;
+            //    geolocalizador.estado = cbxEstado.Text;
 
-                geolocalizador.ShowDialog();
+            //    geolocalizador.ShowDialog();
 
-                captura = geolocalizador.captura;
+            //    captura = geolocalizador.captura;
 
-                if (captura != null)
-                {
-                    System.IO.MemoryStream msImage = new System.IO.MemoryStream(captura);
-                    pbxCapturaDomicilio.Image = Image.FromStream(msImage);
-                }
-                else
-                {
-                    pbxCapturaDomicilio.Image = null;
-                }
-            }
-            else
-            {
-                MessageBox.Show("¡Complete los campos (datos de ubicación [domicilio particular])!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            //    if (captura != null)
+            //    {
+            //        System.IO.MemoryStream msImage = new System.IO.MemoryStream(captura);
+            //        pbxCapturaDomicilio.Image = Image.FromStream(msImage);
+            //    }
+            //    else
+            //    {
+            //        pbxCapturaDomicilio.Image = null;
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("¡Complete los campos (datos de ubicación [domicilio particular])!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
         }
 
         private void btnBuscarAVAL_Click(object sender, EventArgs e)
@@ -565,7 +565,7 @@ namespace Views
                 cbxLocalidad.Enabled = false;
                 cbxMunicipio.Enabled = false;
 
-                pbxCapturaDomicilio.Image = null;
+                //pbxCapturaDomicilio.Image = null;
                 pbxComprobante.Image = null;
                 pbxIdentificacion1.Image = null;
                 pbxIdentificacion2.Image = null;
@@ -619,7 +619,7 @@ namespace Views
                 btnGuardar.Enabled = true;
                 btnCancelar.Enabled = true;
 
-                dtpFechanacimiento.MaxDate = DateTime.Now;
+                //dtpFechanacimiento.MaxDate = DateTime.Now;
                 dtpFechanacimiento.Value = Convert.ToDateTime(DateTime.Now.ToShortDateString());
 
                 txtClave.Enabled = true;
@@ -1223,23 +1223,23 @@ namespace Views
                             identificaciontra = ms2.GetBuffer();
                             socioscontroller.agregarIdentificacion(id, identificaciontra, "TRASERA");
 
-                            //CONVERTIMOS A BYTES --> COMPROBANTE DE DOMICILIO
-                            byte[] comprobantedom;
-                            MemoryStream ms3 = new MemoryStream();
-                            pbxComprobante.Image.Save(ms3, ImageFormat.Jpeg);
-                            comprobantedom = ms3.GetBuffer();
-                            socioscontroller.agregarComprobante(id, comprobantedom);
+                            ////CONVERTIMOS A BYTES --> COMPROBANTE DE DOMICILIO
+                            //byte[] comprobantedom;
+                            //MemoryStream ms3 = new MemoryStream();
+                            //pbxComprobante.Image.Save(ms3, ImageFormat.Jpeg);
+                            //comprobantedom = ms3.GetBuffer();
+                            //socioscontroller.agregarComprobante(id, comprobantedom);
 
-                            //AGREGAR FOTO DEL DOMICILIO --> EN CASO QUE SE HAYA TOMADO CAPTURA
-                            if (pbxCapturaDomicilio.Image != null)
-                            {
-                                //CONVERTIMOS A BYTES --> CAPTURA DE DOMICILIO
-                                byte[] domiciliofoto;
-                                MemoryStream ms4 = new MemoryStream();
-                                pbxCapturaDomicilio.Image.Save(ms4, ImageFormat.Jpeg);
-                                domiciliofoto = ms4.GetBuffer();
-                                socioscontroller.agregarDomicilio(id, domiciliofoto);
-                            }
+                            ////AGREGAR FOTO DEL DOMICILIO --> EN CASO QUE SE HAYA TOMADO CAPTURA
+                            //if (pbxCapturaDomicilio.Image != null)
+                            //{
+                            //    //CONVERTIMOS A BYTES --> CAPTURA DE DOMICILIO
+                            //    byte[] domiciliofoto;
+                            //    MemoryStream ms4 = new MemoryStream();
+                            //    pbxCapturaDomicilio.Image.Save(ms4, ImageFormat.Jpeg);
+                            //    domiciliofoto = ms4.GetBuffer();
+                            //    socioscontroller.agregarDomicilio(id, domiciliofoto);
+                            //}
 
                             if(cbxTipoIngreso.SelectedIndex == 0)
                             {
@@ -1319,7 +1319,7 @@ namespace Views
                             cbxLocalidad.Enabled = false;
                             cbxMunicipio.Enabled = false;
 
-                            pbxCapturaDomicilio.Image = null;
+                            //pbxCapturaDomicilio.Image = null;
                             pbxComprobante.Image = null;
                             pbxIdentificacion1.Image = null;
                             pbxIdentificacion2.Image = null;
@@ -1343,7 +1343,7 @@ namespace Views
                             txtClave.Enabled = true;
                             btnBuscar.Enabled = true;
 
-                            dtpFechanacimiento.MaxDate = DateTime.Now;
+                            //dtpFechanacimiento.MaxDate = DateTime.Now;
                             dtpFechanacimiento.Value = Convert.ToDateTime(DateTime.Now.ToShortDateString());
 
                             txtClave.Focus();
@@ -1478,14 +1478,14 @@ namespace Views
                                 pbxIdentificacion2.Image = Image.FromStream(ms4);
                             }
 
-                            //DOMICILIO CAPTURADO DE MAPS
-                            domicilio = socioscontroller.buscarMapsCapturadoDom(Convert.ToInt64(txtClave.Text));
+                            ////DOMICILIO CAPTURADO DE MAPS
+                            //domicilio = socioscontroller.buscarMapsCapturadoDom(Convert.ToInt64(txtClave.Text));
 
-                            if (domicilio != null)
-                            {
-                                System.IO.MemoryStream ms5 = new System.IO.MemoryStream(domicilio.dom_foto);
-                                pbxCapturaDomicilio.Image = Image.FromStream(ms5);
-                            }
+                            //if (domicilio != null)
+                            //{
+                            //    System.IO.MemoryStream ms5 = new System.IO.MemoryStream(domicilio.dom_foto);
+                            //    pbxCapturaDomicilio.Image = Image.FromStream(ms5);
+                            //}
 
                             //VERIFICACION SI TIENE AVAL O NO
                             if ((cbxTipoIngreso.Text = asociados.aso_tipodeingreso) != "BUEN HISTORIAL CREDITICIO")
@@ -2035,20 +2035,20 @@ namespace Views
                     pbxPerfil.Image.Save(ms4, ImageFormat.Jpeg);
                     fotoperfil = ms4.GetBuffer();
 
-                    //AGREGAR FOTO DEL DOMICILIO --> EN CASO QUE SE HAYA TOMADO CAPTURA
-                    byte[] domiciliofotocap = null;
+                    ////AGREGAR FOTO DEL DOMICILIO --> EN CASO QUE SE HAYA TOMADO CAPTURA
+                    //byte[] domiciliofotocap = null;
 
-                    if (pbxCapturaDomicilio.Image != null)
-                    {
-                        //CONVERTIMOS A BYTES --> CAPTURA DE DOMICILIO
-                        MemoryStream ms5 = new MemoryStream();
-                        pbxCapturaDomicilio.Image.Save(ms5, ImageFormat.Jpeg);
-                        domiciliofotocap = ms5.GetBuffer();
-                    }
+                    //if (pbxCapturaDomicilio.Image != null)
+                    //{
+                    //    //CONVERTIMOS A BYTES --> CAPTURA DE DOMICILIO
+                    //    MemoryStream ms5 = new MemoryStream();
+                    //    pbxCapturaDomicilio.Image.Save(ms5, ImageFormat.Jpeg);
+                    //    domiciliofotocap = ms5.GetBuffer();
+                    //}
 
                     //AGREGAR DATOS DEL SOCIO
-                    socioscontroller.actualizaSocio(txtNombre.Text, txtApellidos.Text, Convert.ToDateTime(dtpFechanacimiento.Value.ToShortDateString()), cbxSexo.Text, cbxEstadoCivil.Text, txtDomicilio.Text, txtReferenciasDomicilio.Text, txtEntreCalles.Text, Convert.ToInt32(txtCodigo.Text), Convert.ToInt64(cbxColonia.SelectedValue.ToString()), Convert.ToInt64(cbxLocalidad.SelectedValue.ToString()), Convert.ToInt64(cbxMunicipio.SelectedValue.ToString()), Convert.ToInt64(cbxEstado.SelectedValue.ToString()), cbxTipoIngreso.Text, telefono, movil, txtCorreo.Text + "@" + cbxProveedor.Text, txtNombreTrabajo.Text, txtPuesto.Text, txtDomicilioTrabajo.Text, telefonotrabajo, extension, txtNombreFamiliar.Text, cbxParentesco.Text, telefonofamiliar, movilfamiliar, Convert.ToDateTime(DateTime.Now.ToShortDateString()), Convert.ToInt64(txtClave.Text), domiciliofotocap, fotoperfil, identificaciondel, identificaciontra, comprobantedom);
-
+                    socioscontroller.actualizaSocio(txtNombre.Text, txtApellidos.Text, Convert.ToDateTime(dtpFechanacimiento.Value.ToShortDateString()), cbxSexo.Text, cbxEstadoCivil.Text, txtDomicilio.Text, txtReferenciasDomicilio.Text, txtEntreCalles.Text, Convert.ToInt32(txtCodigo.Text), Convert.ToInt64(cbxColonia.SelectedValue.ToString()), Convert.ToInt64(cbxLocalidad.SelectedValue.ToString()), Convert.ToInt64(cbxMunicipio.SelectedValue.ToString()), Convert.ToInt64(cbxEstado.SelectedValue.ToString()), cbxTipoIngreso.Text, telefono, movil, txtCorreo.Text + "@" + cbxProveedor.Text, txtNombreTrabajo.Text, txtPuesto.Text, txtDomicilioTrabajo.Text, telefonotrabajo, extension, txtNombreFamiliar.Text, cbxParentesco.Text, telefonofamiliar, movilfamiliar, Convert.ToDateTime(DateTime.Now.ToShortDateString()), Convert.ToInt64(txtClave.Text), fotoperfil, identificaciondel, identificaciontra, comprobantedom);
+                    //Convert.ToInt64(txtClave.Text), domiciliofotocap, fotoperfil
                     MessageBox.Show("¡El registro ha sido actualizado correctamente!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     txtClave.Enabled = true;
@@ -2098,7 +2098,7 @@ namespace Views
                     cbxSexo.SelectedIndex = -1;
                     cbxTipoIngreso.SelectedIndex = -1;
 
-                    pbxCapturaDomicilio.Image = null;
+                    //pbxCapturaDomicilio.Image = null;
                     pbxComprobante.Image = null;
                     pbxIdentificacion1.Image = null;
                     pbxIdentificacion2.Image = null;
@@ -2110,7 +2110,7 @@ namespace Views
                     identificaciontrasera = 0;
                     comprobante = 0;
 
-                    dtpFechanacimiento.MaxDate = DateTime.Now;
+                    //dtpFechanacimiento.MaxDate = DateTime.Now;
                     dtpFechanacimiento.Value = Convert.ToDateTime(DateTime.Now.ToShortDateString());
 
                     //INVISIBLE BOTON
@@ -2186,7 +2186,7 @@ namespace Views
                     cbxLocalidad.Enabled = false;
                     cbxMunicipio.Enabled = false;
 
-                    pbxCapturaDomicilio.Image = null;
+                    //pbxCapturaDomicilio.Image = null;
                     pbxComprobante.Image = null;
                     pbxIdentificacion1.Image = null;
                     pbxIdentificacion2.Image = null;
@@ -2207,7 +2207,7 @@ namespace Views
                     btnGuardar.Enabled = true;
                     btnCancelar.Enabled = true;
 
-                    dtpFechanacimiento.MaxDate = DateTime.Now;
+                    //dtpFechanacimiento.MaxDate = DateTime.Now;
                     dtpFechanacimiento.Value = Convert.ToDateTime(DateTime.Now.ToShortDateString());
 
                     txtClave.Enabled = true;

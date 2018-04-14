@@ -477,22 +477,23 @@ namespace Controllers
         }
 
         //ACTUALIZACION DEL SOCIO
-        public void actualizaSocio(string nombre, string apellidos, DateTime fechanacimiento, string sexo, string estadocivil, string domicilio, string referenciasdomicilio, string entrecalles, int codigopostal, long colonia, long localidad, long municipio, long estado, string tipoingreso, string telefono, string movil, string correo, string nombretrabajo, string ocupacion, string domiciliotrabajo, string telefonotrabajo, string extension, string nombrefamiliar, string parentesco, string telefonofamiliar, string movilfamiliar, DateTime fechaingreso, long id, byte[] geolocalizacion, byte[] fotoperfil, byte[] identificaciondel, byte[] identificaciontra, byte[] comprobante)
+        public void actualizaSocio(string nombre, string apellidos, DateTime fechanacimiento, string sexo, string estadocivil, string domicilio, string referenciasdomicilio, string entrecalles, int codigopostal, long colonia, long localidad, long municipio, long estado, string tipoingreso, string telefono, string movil, string correo, string nombretrabajo, string ocupacion, string domiciliotrabajo, string telefonotrabajo, string extension, string nombrefamiliar, string parentesco, string telefonofamiliar, string movilfamiliar, DateTime fechaingreso, long id, byte[] fotoperfil, byte[] identificaciondel, byte[] identificaciontra, byte[] comprobante)
         {
+            //long id, byte[] geolocalizacion, byte[] fotoperfil
             using (var bd = new Conexion())
             {
-                //VERIFICAR SI HAY:
-                //GEOLOCALIZACION
-                long contar_geolocalizacion = bd.domicilio.Where(dom => dom.dom_asociado == id).LongCount();
+                ////VERIFICAR SI HAY:
+                ////GEOLOCALIZACION
+                //long contar_geolocalizacion = bd.domicilio.Where(dom => dom.dom_asociado == id).LongCount();
 
-                if(contar_geolocalizacion > 0)
-                {
-                    bd.Database.ExecuteSqlCommand("UPDATE domicilio SET dom_foto = {0} WHERE dom_asociado = {1}", geolocalizacion, id);
-                }
-                else
-                {
-                    bd.Database.ExecuteSqlCommand("INSERT INTO domicilio(dom_foto, dom_asociado) VALUES({0}, {1})", geolocalizacion, id);
-                }
+                //if(contar_geolocalizacion > 0)
+                //{
+                //    bd.Database.ExecuteSqlCommand("UPDATE domicilio SET dom_foto = {0} WHERE dom_asociado = {1}", geolocalizacion, id);
+                //}
+                //else
+                //{
+                //    bd.Database.ExecuteSqlCommand("INSERT INTO domicilio(dom_foto, dom_asociado) VALUES({0}, {1})", geolocalizacion, id);
+                //}
 
                 //ACTUALIZAR FOTO DE PERFIL
                 bd.Database.ExecuteSqlCommand("UPDATE fotosasociados SET fot_fotoperfil = {0} WHERE fot_asociado = {1}", fotoperfil, id);

@@ -1,6 +1,6 @@
 ﻿namespace Views
 {
-    partial class Reportes
+    partial class Reportes_menu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reportes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reportes_menu));
             this.pMenuprincipal = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblSubMenu44 = new System.Windows.Forms.Label();
@@ -56,11 +56,11 @@
             this.lblSubMenu22 = new System.Windows.Forms.Label();
             this.lblMenu2 = new System.Windows.Forms.Label();
             this.lblSubMenu21 = new System.Windows.Forms.Label();
-            this.lblMenu1 = new System.Windows.Forms.Label();
-            this.pbxMenu1 = new System.Windows.Forms.PictureBox();
-            this.lblSubMenu11 = new System.Windows.Forms.Label();
-            this.lblSubMenu12 = new System.Windows.Forms.Label();
             this.pMenu1 = new System.Windows.Forms.Panel();
+            this.lblSubMenu12 = new System.Windows.Forms.Label();
+            this.lblSubMenu11 = new System.Windows.Forms.Label();
+            this.pbxMenu1 = new System.Windows.Forms.PictureBox();
+            this.lblMenu1 = new System.Windows.Forms.Label();
             this.pMenuprincipal.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMenu6)).BeginInit();
@@ -72,8 +72,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxMenu3)).BeginInit();
             this.pMenu2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMenu2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMenu1)).BeginInit();
             this.pMenu1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // pMenuprincipal
@@ -366,46 +366,6 @@
             this.lblSubMenu21.Text = "Ingreso, modificación y baja de cuentas de usuario";
             this.lblSubMenu21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblMenu1
-            // 
-            this.lblMenu1.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenu1.Location = new System.Drawing.Point(55, 9);
-            this.lblMenu1.Name = "lblMenu1";
-            this.lblMenu1.Size = new System.Drawing.Size(141, 49);
-            this.lblMenu1.TabIndex = 0;
-            this.lblMenu1.Text = "Pagos";
-            this.lblMenu1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pbxMenu1
-            // 
-            this.pbxMenu1.BackColor = System.Drawing.Color.Transparent;
-            this.pbxMenu1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbxMenu1.BackgroundImage")));
-            this.pbxMenu1.Location = new System.Drawing.Point(12, 19);
-            this.pbxMenu1.Name = "pbxMenu1";
-            this.pbxMenu1.Size = new System.Drawing.Size(28, 28);
-            this.pbxMenu1.TabIndex = 14;
-            this.pbxMenu1.TabStop = false;
-            // 
-            // lblSubMenu11
-            // 
-            this.lblSubMenu11.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubMenu11.Location = new System.Drawing.Point(55, 67);
-            this.lblSubMenu11.Name = "lblSubMenu11";
-            this.lblSubMenu11.Size = new System.Drawing.Size(141, 28);
-            this.lblSubMenu11.TabIndex = 15;
-            this.lblSubMenu11.Text = "Historial de pagos";
-            this.lblSubMenu11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblSubMenu12
-            // 
-            this.lblSubMenu12.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubMenu12.Location = new System.Drawing.Point(55, 105);
-            this.lblSubMenu12.Name = "lblSubMenu12";
-            this.lblSubMenu12.Size = new System.Drawing.Size(155, 28);
-            this.lblSubMenu12.TabIndex = 18;
-            this.lblSubMenu12.Text = "Relación de cobros por realizar";
-            this.lblSubMenu12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // pMenu1
             // 
             this.pMenu1.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -419,12 +379,54 @@
             this.pMenu1.Size = new System.Drawing.Size(220, 184);
             this.pMenu1.TabIndex = 0;
             // 
+            // lblSubMenu12
+            // 
+            this.lblSubMenu12.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubMenu12.Location = new System.Drawing.Point(55, 105);
+            this.lblSubMenu12.Name = "lblSubMenu12";
+            this.lblSubMenu12.Size = new System.Drawing.Size(155, 28);
+            this.lblSubMenu12.TabIndex = 18;
+            this.lblSubMenu12.Text = "Relación de cobros por realizar";
+            this.lblSubMenu12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblSubMenu11
+            // 
+            this.lblSubMenu11.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubMenu11.Location = new System.Drawing.Point(55, 67);
+            this.lblSubMenu11.Name = "lblSubMenu11";
+            this.lblSubMenu11.Size = new System.Drawing.Size(141, 28);
+            this.lblSubMenu11.TabIndex = 15;
+            this.lblSubMenu11.Text = "Historial de pagos";
+            this.lblSubMenu11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSubMenu11.Click += new System.EventHandler(this.lblSubMenu11_Click);
+            // 
+            // pbxMenu1
+            // 
+            this.pbxMenu1.BackColor = System.Drawing.Color.Transparent;
+            this.pbxMenu1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbxMenu1.BackgroundImage")));
+            this.pbxMenu1.Location = new System.Drawing.Point(12, 19);
+            this.pbxMenu1.Name = "pbxMenu1";
+            this.pbxMenu1.Size = new System.Drawing.Size(28, 28);
+            this.pbxMenu1.TabIndex = 14;
+            this.pbxMenu1.TabStop = false;
+            // 
+            // lblMenu1
+            // 
+            this.lblMenu1.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenu1.Location = new System.Drawing.Point(55, 9);
+            this.lblMenu1.Name = "lblMenu1";
+            this.lblMenu1.Size = new System.Drawing.Size(141, 49);
+            this.lblMenu1.TabIndex = 0;
+            this.lblMenu1.Text = "Pagos";
+            this.lblMenu1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Reportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(745, 469);
             this.Controls.Add(this.pMenuprincipal);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Reportes";
             this.Text = "Reportes";
             this.pMenuprincipal.ResumeLayout(false);
@@ -438,8 +440,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxMenu3)).EndInit();
             this.pMenu2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxMenu2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxMenu1)).EndInit();
             this.pMenu1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMenu1)).EndInit();
             this.ResumeLayout(false);
 
         }

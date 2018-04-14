@@ -445,8 +445,11 @@ namespace Views
 
         private void lblSubMenu44_Click(object sender, EventArgs e)
         {
-            Contabilidad contabilidad = new Contabilidad();
-            contabilidad.ShowDialog();
+            //Contabilidad contabilidad = new Contabilidad();
+            //contabilidad.ShowDialog();
+
+            Reportes_menu menu = new Reportes_menu();
+            menu.ShowDialog();
         }
     }
 }
