@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controllers", "Controllers\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{0291728C-E816-4E84-AA51-92BDDE7E8CC2}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{4157614D-C033-41E3-806D-E48DA5C5FBE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU
@@ -118,6 +120,21 @@ Global
 		{0291728C-E816-4E84-AA51-92BDDE7E8CC2}.SingleImage|x64.Build.0 = Release|Any CPU
 		{0291728C-E816-4E84-AA51-92BDDE7E8CC2}.SingleImage|x86.ActiveCfg = Release|Any CPU
 		{0291728C-E816-4E84-AA51-92BDDE7E8CC2}.SingleImage|x86.Build.0 = Release|Any CPU
+		{4157614D-C033-41E3-806D-E48DA5C5FBE7}.CD_ROM|Any CPU.ActiveCfg = Release
+		{4157614D-C033-41E3-806D-E48DA5C5FBE7}.CD_ROM|x64.ActiveCfg = Release
+		{4157614D-C033-41E3-806D-E48DA5C5FBE7}.CD_ROM|x86.ActiveCfg = Release
+		{4157614D-C033-41E3-806D-E48DA5C5FBE7}.Debug|Any CPU.ActiveCfg = Debug
+		{4157614D-C033-41E3-806D-E48DA5C5FBE7}.Debug|x64.ActiveCfg = Debug
+		{4157614D-C033-41E3-806D-E48DA5C5FBE7}.Debug|x86.ActiveCfg = Debug
+		{4157614D-C033-41E3-806D-E48DA5C5FBE7}.DVD-5|Any CPU.ActiveCfg = Debug
+		{4157614D-C033-41E3-806D-E48DA5C5FBE7}.DVD-5|x64.ActiveCfg = Debug
+		{4157614D-C033-41E3-806D-E48DA5C5FBE7}.DVD-5|x86.ActiveCfg = Debug
+		{4157614D-C033-41E3-806D-E48DA5C5FBE7}.Release|Any CPU.ActiveCfg = Release
+		{4157614D-C033-41E3-806D-E48DA5C5FBE7}.Release|x64.ActiveCfg = Release
+		{4157614D-C033-41E3-806D-E48DA5C5FBE7}.Release|x86.ActiveCfg = Release
+		{4157614D-C033-41E3-806D-E48DA5C5FBE7}.SingleImage|Any CPU.ActiveCfg = Release
+		{4157614D-C033-41E3-806D-E48DA5C5FBE7}.SingleImage|x64.ActiveCfg = Release
+		{4157614D-C033-41E3-806D-E48DA5C5FBE7}.SingleImage|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
