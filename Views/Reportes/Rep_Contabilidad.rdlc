@@ -24,9 +24,8 @@
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
         <Top>0.47924cm</Top>
-        <Left>0.47307cm</Left>
         <Height>0.70583cm</Height>
-        <Width>22.39668cm</Width>
+        <Width>23.14599cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -44,7 +43,7 @@
               <Width>1.5475cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>7.11855cm</Width>
+              <Width>7.86786cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>3.08208cm</Width>
@@ -177,7 +176,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Monto</Value>
+                              <Value>Subtotal</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -383,8 +382,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatCurrency(Fields!con_monto.Value)</Value>
-                              <Style />
+                              <Value>=Fields!con_monto.Value</Value>
+                              <Style>
+                                <Format>'$' #,0.00</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -402,6 +403,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -415,8 +417,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatCurrency(Fields!con_interes.Value)</Value>
-                              <Style />
+                              <Value>=Fields!con_interes.Value</Value>
+                              <Style>
+                                <Format>'$' #,0.00</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -434,6 +438,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -447,8 +452,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatCurrency(Fields!con_total.Value)</Value>
-                              <Style />
+                              <Value>=Fields!con_total.Value</Value>
+                              <Style>
+                                <Format>'$' #,0.00</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -466,6 +473,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -521,8 +529,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatCurrency(Math.Round(Sum(Fields!con_monto.Value, "DataSetBD")))</Value>
-                              <Style />
+                              <Value>=Math.Round(Sum(Fields!con_monto.Value, "DataSetBD"))</Value>
+                              <Style>
+                                <Format>'$' #,0.00</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -540,6 +550,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -553,8 +564,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatCurrency(Math.Round(Sum(Fields!con_interes.Value, "DataSetBD")))</Value>
-                              <Style />
+                              <Value>=Math.Round(Sum(Fields!con_interes.Value, "DataSetBD"))</Value>
+                              <Style>
+                                <Format>'$' #,0.00</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -572,6 +585,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -585,8 +599,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatCurrency(Math.Round(Sum(Fields!con_total.Value, "DataSetBD")))</Value>
-                              <Style />
+                              <Value>=Math.Round(Sum(Fields!con_total.Value, "DataSetBD"))</Value>
+                              <Style>
+                                <Format>'$' #,0.00</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -604,6 +620,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -637,9 +654,8 @@
         </TablixRowHierarchy>
         <DataSetName>DataSetBD</DataSetName>
         <Top>1.88153cm</Top>
-        <Left>0.47307cm</Left>
         <Height>1.8cm</Height>
-        <Width>22.39668cm</Width>
+        <Width>23.14599cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>

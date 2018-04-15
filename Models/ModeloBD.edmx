@@ -492,6 +492,10 @@ advertencia 6002: La tabla o vista 'def.bdcasaprestamos.v_rep_consulta_operacion
           <Property Name="aso_movilfamiliar" Type="varchar" MaxLength="20" />
           <Property Name="aso_fechaingreso" Type="date" Nullable="false" />
           <Property Name="p.pag_total - t.tra_total" Type="decimal" Precision="39" Scale="2" Nullable="false" />
+          <Property Name="cantidad_prestamos" Type="bigint" />
+          <Property Name="prestamos_por_pagar" Type="bigint" />
+          <Property Name="prestamos_pagados" Type="bigint" />
+          <Property Name="aso_domicilio_completo" Type="text" />
         </EntityType>
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'def.bdcasaprestamos.v_rep_contabilidad' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
@@ -1157,12 +1161,16 @@ advertencia 6002: La tabla o vista 'def.bdcasaprestamos.v_rep_prestamos_historia
           </Key>
           <Property Name="aso_id" Type="bigint" Nullable="false" />
           <Property Name="aso_nombre" Type="varchar" MaxLength="201" />
+          <Property Name="aso_movil" Type="varchar" MaxLength="20" />
+          <Property Name="aso_telefono" Type="varchar" MaxLength="20" />
+          <Property Name="aso_correoelectronico" Type="varchar" MaxLength="200" />
           <Property Name="pre_id" Type="bigint" Nullable="false" />
           <Property Name="pre_credito" Type="decimal" Precision="20" Scale="2" Nullable="false" />
           <Property Name="pre_cuotas" Type="int" Nullable="false" />
           <Property Name="pre_tipo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="pre_interes" Type="int" Nullable="false" />
           <Property Name="pre_fechaprestamo" Type="date" Nullable="false" />
+          <Property Name="aso_domicilio_completo" Type="text" />
         </EntityType>
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'def.bdcasaprestamos.v_rep_prestamos_pendientes_por_pagar' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
@@ -1496,6 +1504,126 @@ advertencia 6002: La tabla o vista 'def.bdcasaprestamos.v_rep_tarjeton_prestamos
           <Property Name="pre_primerpago" Type="date" Nullable="false" />
           <Property Name="pre_observaciones" Type="varchar" MaxLength="255" />
           <Property Name="pre_asociado" Type="bigint" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'def.bdcasaprestamos.v_rep_ticket' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="v_rep_ticket">
+          <Key>
+            <PropertyRef Name="tra_id" />
+            <PropertyRef Name="tra_fecha" />
+            <PropertyRef Name="tra_subtotal" />
+            <PropertyRef Name="tra_interes" />
+            <PropertyRef Name="tra_total" />
+            <PropertyRef Name="tra_pago" />
+            <PropertyRef Name="tra_operacion" />
+            <PropertyRef Name="ope_id" />
+            <PropertyRef Name="ope_fecha" />
+            <PropertyRef Name="ope_hora" />
+            <PropertyRef Name="pre_id" />
+            <PropertyRef Name="pre_credito" />
+            <PropertyRef Name="pre_cuotas" />
+            <PropertyRef Name="pre_tipo" />
+            <PropertyRef Name="pre_interes" />
+            <PropertyRef Name="pre_semenas" />
+            <PropertyRef Name="pre_meses" />
+            <PropertyRef Name="pre_interesfinal" />
+            <PropertyRef Name="pre_totalinteres" />
+            <PropertyRef Name="pre_total" />
+            <PropertyRef Name="pre_fechaprestamo" />
+            <PropertyRef Name="pre_primerpago" />
+            <PropertyRef Name="pre_asociado" />
+            <PropertyRef Name="pag_id" />
+            <PropertyRef Name="pag_credito" />
+            <PropertyRef Name="pag_importe" />
+            <PropertyRef Name="pag_interes" />
+            <PropertyRef Name="pag_total" />
+            <PropertyRef Name="pag_fechapago" />
+            <PropertyRef Name="pag_pagado" />
+            <PropertyRef Name="pag_prestamo" />
+            <PropertyRef Name="aso_id" />
+            <PropertyRef Name="aso_nombre" />
+            <PropertyRef Name="aso_apellidos" />
+            <PropertyRef Name="aso_sexo" />
+            <PropertyRef Name="aso_fechanacimiento" />
+            <PropertyRef Name="aso_estadocivil" />
+            <PropertyRef Name="aso_domicilio" />
+            <PropertyRef Name="aso_referenciasdomicilio" />
+            <PropertyRef Name="aso_referenciascalles" />
+            <PropertyRef Name="aso_codigopostal" />
+            <PropertyRef Name="aso_colonia" />
+            <PropertyRef Name="aso_localidad" />
+            <PropertyRef Name="aso_municipio" />
+            <PropertyRef Name="aso_estado" />
+            <PropertyRef Name="aso_tipodeingreso" />
+            <PropertyRef Name="aso_nombretrabajo" />
+            <PropertyRef Name="aso_ocupacion" />
+            <PropertyRef Name="aso_domiciliotrabajo" />
+            <PropertyRef Name="aso_telefonotrabajo" />
+            <PropertyRef Name="aso_nombrefamiliar" />
+            <PropertyRef Name="aso_parentesco" />
+            <PropertyRef Name="aso_fechaingreso" />
+          </Key>
+          <Property Name="tra_id" Type="bigint" Nullable="false" />
+          <Property Name="tra_fecha" Type="date" Nullable="false" />
+          <Property Name="tra_subtotal" Type="decimal" Precision="38" Scale="2" Nullable="false" />
+          <Property Name="tra_interes" Type="decimal" Precision="38" Scale="2" Nullable="false" />
+          <Property Name="tra_total" Type="decimal" Precision="38" Scale="2" Nullable="false" />
+          <Property Name="tra_pago" Type="bigint" Nullable="false" />
+          <Property Name="tra_operacion" Type="bigint" Nullable="false" />
+          <Property Name="ope_id" Type="bigint" Nullable="false" />
+          <Property Name="ope_fecha" Type="date" Nullable="false" />
+          <Property Name="ope_hora" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="pre_id" Type="bigint" Nullable="false" />
+          <Property Name="pre_credito" Type="decimal" Precision="20" Scale="2" Nullable="false" />
+          <Property Name="pre_cuotas" Type="int" Nullable="false" />
+          <Property Name="pre_tipo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pre_interes" Type="int" Nullable="false" />
+          <Property Name="pre_semenas" Type="int" Nullable="false" />
+          <Property Name="pre_meses" Type="int" Nullable="false" />
+          <Property Name="pre_interesfinal" Type="int" Nullable="false" />
+          <Property Name="pre_totalinteres" Type="decimal" Precision="20" Scale="2" Nullable="false" />
+          <Property Name="pre_total" Type="decimal" Precision="20" Scale="2" Nullable="false" />
+          <Property Name="pre_fechaprestamo" Type="date" Nullable="false" />
+          <Property Name="pre_primerpago" Type="date" Nullable="false" />
+          <Property Name="pre_observaciones" Type="varchar" MaxLength="255" />
+          <Property Name="pre_asociado" Type="bigint" Nullable="false" />
+          <Property Name="pag_id" Type="bigint" Nullable="false" />
+          <Property Name="pag_credito" Type="decimal" Precision="20" Scale="2" Nullable="false" />
+          <Property Name="pag_importe" Type="decimal" Precision="20" Scale="2" Nullable="false" />
+          <Property Name="pag_interes" Type="decimal" Precision="20" Scale="2" Nullable="false" />
+          <Property Name="pag_total" Type="decimal" Precision="20" Scale="2" Nullable="false" />
+          <Property Name="pag_fechapago" Type="date" Nullable="false" />
+          <Property Name="pag_pagado" Type="decimal" Precision="20" Scale="2" Nullable="false" />
+          <Property Name="pag_fechapagado" Type="date" />
+          <Property Name="pag_prestamo" Type="bigint" Nullable="false" />
+          <Property Name="aso_id" Type="bigint" Nullable="false" />
+          <Property Name="aso_nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aso_apellidos" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aso_sexo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="aso_fechanacimiento" Type="date" Nullable="false" />
+          <Property Name="aso_estadocivil" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="aso_domicilio" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="aso_referenciasdomicilio" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="aso_referenciascalles" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="aso_codigopostal" Type="int" Nullable="false" />
+          <Property Name="aso_colonia" Type="bigint" Nullable="false" />
+          <Property Name="aso_localidad" Type="bigint" Nullable="false" />
+          <Property Name="aso_municipio" Type="bigint" Nullable="false" />
+          <Property Name="aso_estado" Type="bigint" Nullable="false" />
+          <Property Name="aso_tipodeingreso" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="aso_telefono" Type="varchar" MaxLength="20" />
+          <Property Name="aso_movil" Type="varchar" MaxLength="20" />
+          <Property Name="aso_correoelectronico" Type="varchar" MaxLength="200" />
+          <Property Name="aso_nombretrabajo" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="aso_ocupacion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aso_domiciliotrabajo" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="aso_telefonotrabajo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="aso_extension" Type="varchar" MaxLength="20" />
+          <Property Name="aso_nombrefamiliar" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="aso_parentesco" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aso_telefonofamiliar" Type="varchar" MaxLength="20" />
+          <Property Name="aso_movilfamiliar" Type="varchar" MaxLength="20" />
+          <Property Name="aso_fechaingreso" Type="date" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'def.bdcasaprestamos.v_rep_usuarios' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
@@ -1960,7 +2088,11 @@ FROM `v_rep_colonias` AS `v_rep_colonias`</DefiningQuery>
 `v_rep_consulta_operaciones_realizadas`.`aso_telefonofamiliar`, 
 `v_rep_consulta_operaciones_realizadas`.`aso_movilfamiliar`, 
 `v_rep_consulta_operaciones_realizadas`.`aso_fechaingreso`, 
-`v_rep_consulta_operaciones_realizadas`.`p.pag_total - t.tra_total`
+`v_rep_consulta_operaciones_realizadas`.`p.pag_total - t.tra_total`, 
+`v_rep_consulta_operaciones_realizadas`.`cantidad_prestamos`, 
+`v_rep_consulta_operaciones_realizadas`.`prestamos_por_pagar`, 
+`v_rep_consulta_operaciones_realizadas`.`prestamos_pagados`, 
+`v_rep_consulta_operaciones_realizadas`.`aso_domicilio_completo`
 FROM `v_rep_consulta_operaciones_realizadas` AS `v_rep_consulta_operaciones_realizadas`</DefiningQuery>
           </EntitySet>
           <EntitySet Name="v_rep_contabilidad" EntityType="Self.v_rep_contabilidad" store:Type="Views" store:Schema="bdcasaprestamos">
@@ -2331,12 +2463,16 @@ FROM `v_rep_prestamos` AS `v_rep_prestamos`</DefiningQuery>
             <DefiningQuery>SELECT
 `v_rep_prestamos_historial`.`aso_id`, 
 `v_rep_prestamos_historial`.`aso_nombre`, 
+`v_rep_prestamos_historial`.`aso_movil`, 
+`v_rep_prestamos_historial`.`aso_telefono`, 
+`v_rep_prestamos_historial`.`aso_correoelectronico`, 
 `v_rep_prestamos_historial`.`pre_id`, 
 `v_rep_prestamos_historial`.`pre_credito`, 
 `v_rep_prestamos_historial`.`pre_cuotas`, 
 `v_rep_prestamos_historial`.`pre_tipo`, 
 `v_rep_prestamos_historial`.`pre_interes`, 
-`v_rep_prestamos_historial`.`pre_fechaprestamo`
+`v_rep_prestamos_historial`.`pre_fechaprestamo`, 
+`v_rep_prestamos_historial`.`aso_domicilio_completo`
 FROM `v_rep_prestamos_historial` AS `v_rep_prestamos_historial`</DefiningQuery>
           </EntitySet>
           <EntitySet Name="v_rep_prestamos_pendientes_por_pagar" EntityType="Self.v_rep_prestamos_pendientes_por_pagar" store:Type="Views" store:Schema="bdcasaprestamos">
@@ -2538,6 +2674,71 @@ FROM `v_rep_tarjeton_pagos` AS `v_rep_tarjeton_pagos`</DefiningQuery>
 `v_rep_tarjeton_prestamos`.`pre_asociado`
 FROM `v_rep_tarjeton_prestamos` AS `v_rep_tarjeton_prestamos`</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="v_rep_ticket" EntityType="Self.v_rep_ticket" store:Type="Views" store:Schema="bdcasaprestamos">
+            <DefiningQuery>SELECT
+`v_rep_ticket`.`tra_id`, 
+`v_rep_ticket`.`tra_fecha`, 
+`v_rep_ticket`.`tra_subtotal`, 
+`v_rep_ticket`.`tra_interes`, 
+`v_rep_ticket`.`tra_total`, 
+`v_rep_ticket`.`tra_pago`, 
+`v_rep_ticket`.`tra_operacion`, 
+`v_rep_ticket`.`ope_id`, 
+`v_rep_ticket`.`ope_fecha`, 
+`v_rep_ticket`.`ope_hora`, 
+`v_rep_ticket`.`pre_id`, 
+`v_rep_ticket`.`pre_credito`, 
+`v_rep_ticket`.`pre_cuotas`, 
+`v_rep_ticket`.`pre_tipo`, 
+`v_rep_ticket`.`pre_interes`, 
+`v_rep_ticket`.`pre_semenas`, 
+`v_rep_ticket`.`pre_meses`, 
+`v_rep_ticket`.`pre_interesfinal`, 
+`v_rep_ticket`.`pre_totalinteres`, 
+`v_rep_ticket`.`pre_total`, 
+`v_rep_ticket`.`pre_fechaprestamo`, 
+`v_rep_ticket`.`pre_primerpago`, 
+`v_rep_ticket`.`pre_observaciones`, 
+`v_rep_ticket`.`pre_asociado`, 
+`v_rep_ticket`.`pag_id`, 
+`v_rep_ticket`.`pag_credito`, 
+`v_rep_ticket`.`pag_importe`, 
+`v_rep_ticket`.`pag_interes`, 
+`v_rep_ticket`.`pag_total`, 
+`v_rep_ticket`.`pag_fechapago`, 
+`v_rep_ticket`.`pag_pagado`, 
+`v_rep_ticket`.`pag_fechapagado`, 
+`v_rep_ticket`.`pag_prestamo`, 
+`v_rep_ticket`.`aso_id`, 
+`v_rep_ticket`.`aso_nombre`, 
+`v_rep_ticket`.`aso_apellidos`, 
+`v_rep_ticket`.`aso_sexo`, 
+`v_rep_ticket`.`aso_fechanacimiento`, 
+`v_rep_ticket`.`aso_estadocivil`, 
+`v_rep_ticket`.`aso_domicilio`, 
+`v_rep_ticket`.`aso_referenciasdomicilio`, 
+`v_rep_ticket`.`aso_referenciascalles`, 
+`v_rep_ticket`.`aso_codigopostal`, 
+`v_rep_ticket`.`aso_colonia`, 
+`v_rep_ticket`.`aso_localidad`, 
+`v_rep_ticket`.`aso_municipio`, 
+`v_rep_ticket`.`aso_estado`, 
+`v_rep_ticket`.`aso_tipodeingreso`, 
+`v_rep_ticket`.`aso_telefono`, 
+`v_rep_ticket`.`aso_movil`, 
+`v_rep_ticket`.`aso_correoelectronico`, 
+`v_rep_ticket`.`aso_nombretrabajo`, 
+`v_rep_ticket`.`aso_ocupacion`, 
+`v_rep_ticket`.`aso_domiciliotrabajo`, 
+`v_rep_ticket`.`aso_telefonotrabajo`, 
+`v_rep_ticket`.`aso_extension`, 
+`v_rep_ticket`.`aso_nombrefamiliar`, 
+`v_rep_ticket`.`aso_parentesco`, 
+`v_rep_ticket`.`aso_telefonofamiliar`, 
+`v_rep_ticket`.`aso_movilfamiliar`, 
+`v_rep_ticket`.`aso_fechaingreso`
+FROM `v_rep_ticket` AS `v_rep_ticket`</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="v_rep_usuarios" EntityType="Self.v_rep_usuarios" store:Type="Views" store:Schema="bdcasaprestamos">
             <DefiningQuery>SELECT
 `v_rep_usuarios`.`per_id`, 
@@ -2718,6 +2919,7 @@ FROM `v_rep_usuarios` AS `v_rep_usuarios`</DefiningQuery>
           <EntitySet Name="v_rep_tarjeton_asociados" EntityType="bdcasaprestamosModel.v_rep_tarjeton_asociados" />
           <EntitySet Name="v_rep_tarjeton_pagos" EntityType="bdcasaprestamosModel.v_rep_tarjeton_pagos" />
           <EntitySet Name="v_rep_tarjeton_prestamos" EntityType="bdcasaprestamosModel.v_rep_tarjeton_prestamos" />
+          <EntitySet Name="v_rep_ticket" EntityType="bdcasaprestamosModel.v_rep_ticket" />
           <EntitySet Name="v_rep_usuarios" EntityType="bdcasaprestamosModel.v_rep_usuarios" />
           <AssociationSet Name="FKPrivilegios" Association="bdcasaprestamosModel.FKPrivilegios">
             <End Role="privilegios_usuario" EntitySet="privilegios_usuario" />
@@ -3355,6 +3557,10 @@ FROM `v_rep_usuarios` AS `v_rep_usuarios`</DefiningQuery>
           <Property Name="aso_movilfamiliar" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="aso_fechaingreso" Type="DateTime" Nullable="false" />
           <Property Name="p_pag_total___t_tra_total" Type="Decimal" Nullable="false" />
+          <Property Name="cantidad_prestamos" Type="Int64" />
+          <Property Name="prestamos_por_pagar" Type="Int64" />
+          <Property Name="prestamos_pagados" Type="Int64" />
+          <Property Name="aso_domicilio_completo" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="v_rep_contabilidad">
           <Key>
@@ -3988,12 +4194,16 @@ FROM `v_rep_usuarios` AS `v_rep_usuarios`</DefiningQuery>
           </Key>
           <Property Name="aso_id" Type="Int64" Nullable="false" />
           <Property Name="aso_nombre" Type="String" MaxLength="201" FixedLength="false" Unicode="false" />
+          <Property Name="aso_movil" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="aso_telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="aso_correoelectronico" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="pre_id" Type="Int64" Nullable="false" />
           <Property Name="pre_credito" Type="Decimal" Nullable="false" />
           <Property Name="pre_cuotas" Type="Int32" Nullable="false" />
           <Property Name="pre_tipo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="pre_interes" Type="Int32" Nullable="false" />
           <Property Name="pre_fechaprestamo" Type="DateTime" Nullable="false" />
+          <Property Name="aso_domicilio_completo" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="v_rep_prestamos_pendientes_por_pagar">
           <Key>
@@ -4307,6 +4517,124 @@ FROM `v_rep_usuarios` AS `v_rep_usuarios`</DefiningQuery>
           <Property Name="pre_primerpago" Type="DateTime" Nullable="false" />
           <Property Name="pre_observaciones" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="pre_asociado" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="v_rep_ticket">
+          <Key>
+            <PropertyRef Name="tra_id" />
+            <PropertyRef Name="tra_fecha" />
+            <PropertyRef Name="tra_subtotal" />
+            <PropertyRef Name="tra_interes" />
+            <PropertyRef Name="tra_total" />
+            <PropertyRef Name="tra_pago" />
+            <PropertyRef Name="tra_operacion" />
+            <PropertyRef Name="ope_id" />
+            <PropertyRef Name="ope_fecha" />
+            <PropertyRef Name="ope_hora" />
+            <PropertyRef Name="pre_id" />
+            <PropertyRef Name="pre_credito" />
+            <PropertyRef Name="pre_cuotas" />
+            <PropertyRef Name="pre_tipo" />
+            <PropertyRef Name="pre_interes" />
+            <PropertyRef Name="pre_semenas" />
+            <PropertyRef Name="pre_meses" />
+            <PropertyRef Name="pre_interesfinal" />
+            <PropertyRef Name="pre_totalinteres" />
+            <PropertyRef Name="pre_total" />
+            <PropertyRef Name="pre_fechaprestamo" />
+            <PropertyRef Name="pre_primerpago" />
+            <PropertyRef Name="pre_asociado" />
+            <PropertyRef Name="pag_id" />
+            <PropertyRef Name="pag_credito" />
+            <PropertyRef Name="pag_importe" />
+            <PropertyRef Name="pag_interes" />
+            <PropertyRef Name="pag_total" />
+            <PropertyRef Name="pag_fechapago" />
+            <PropertyRef Name="pag_pagado" />
+            <PropertyRef Name="pag_prestamo" />
+            <PropertyRef Name="aso_id" />
+            <PropertyRef Name="aso_nombre" />
+            <PropertyRef Name="aso_apellidos" />
+            <PropertyRef Name="aso_sexo" />
+            <PropertyRef Name="aso_fechanacimiento" />
+            <PropertyRef Name="aso_estadocivil" />
+            <PropertyRef Name="aso_domicilio" />
+            <PropertyRef Name="aso_referenciasdomicilio" />
+            <PropertyRef Name="aso_referenciascalles" />
+            <PropertyRef Name="aso_codigopostal" />
+            <PropertyRef Name="aso_colonia" />
+            <PropertyRef Name="aso_localidad" />
+            <PropertyRef Name="aso_municipio" />
+            <PropertyRef Name="aso_estado" />
+            <PropertyRef Name="aso_tipodeingreso" />
+            <PropertyRef Name="aso_nombretrabajo" />
+            <PropertyRef Name="aso_ocupacion" />
+            <PropertyRef Name="aso_domiciliotrabajo" />
+            <PropertyRef Name="aso_telefonotrabajo" />
+            <PropertyRef Name="aso_nombrefamiliar" />
+            <PropertyRef Name="aso_parentesco" />
+            <PropertyRef Name="aso_fechaingreso" />
+          </Key>
+          <Property Name="tra_id" Type="Int64" Nullable="false" />
+          <Property Name="tra_fecha" Type="DateTime" Nullable="false" />
+          <Property Name="tra_subtotal" Type="Decimal" Nullable="false" />
+          <Property Name="tra_interes" Type="Decimal" Nullable="false" />
+          <Property Name="tra_total" Type="Decimal" Nullable="false" />
+          <Property Name="tra_pago" Type="Int64" Nullable="false" />
+          <Property Name="tra_operacion" Type="Int64" Nullable="false" />
+          <Property Name="ope_id" Type="Int64" Nullable="false" />
+          <Property Name="ope_fecha" Type="DateTime" Nullable="false" />
+          <Property Name="ope_hora" Type="DateTime" Nullable="false" />
+          <Property Name="pre_id" Type="Int64" Nullable="false" />
+          <Property Name="pre_credito" Type="Decimal" Nullable="false" />
+          <Property Name="pre_cuotas" Type="Int32" Nullable="false" />
+          <Property Name="pre_tipo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pre_interes" Type="Int32" Nullable="false" />
+          <Property Name="pre_semenas" Type="Int32" Nullable="false" />
+          <Property Name="pre_meses" Type="Int32" Nullable="false" />
+          <Property Name="pre_interesfinal" Type="Int32" Nullable="false" />
+          <Property Name="pre_totalinteres" Type="Decimal" Nullable="false" />
+          <Property Name="pre_total" Type="Decimal" Nullable="false" />
+          <Property Name="pre_fechaprestamo" Type="DateTime" Nullable="false" />
+          <Property Name="pre_primerpago" Type="DateTime" Nullable="false" />
+          <Property Name="pre_observaciones" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="pre_asociado" Type="Int64" Nullable="false" />
+          <Property Name="pag_id" Type="Int64" Nullable="false" />
+          <Property Name="pag_credito" Type="Decimal" Nullable="false" />
+          <Property Name="pag_importe" Type="Decimal" Nullable="false" />
+          <Property Name="pag_interes" Type="Decimal" Nullable="false" />
+          <Property Name="pag_total" Type="Decimal" Nullable="false" />
+          <Property Name="pag_fechapago" Type="DateTime" Nullable="false" />
+          <Property Name="pag_pagado" Type="Decimal" Nullable="false" />
+          <Property Name="pag_fechapagado" Type="DateTime" />
+          <Property Name="pag_prestamo" Type="Int64" Nullable="false" />
+          <Property Name="aso_id" Type="Int64" Nullable="false" />
+          <Property Name="aso_nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="aso_apellidos" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="aso_sexo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="aso_fechanacimiento" Type="DateTime" Nullable="false" />
+          <Property Name="aso_estadocivil" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="aso_domicilio" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="aso_referenciasdomicilio" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="aso_referenciascalles" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="aso_codigopostal" Type="Int32" Nullable="false" />
+          <Property Name="aso_colonia" Type="Int64" Nullable="false" />
+          <Property Name="aso_localidad" Type="Int64" Nullable="false" />
+          <Property Name="aso_municipio" Type="Int64" Nullable="false" />
+          <Property Name="aso_estado" Type="Int64" Nullable="false" />
+          <Property Name="aso_tipodeingreso" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="aso_telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="aso_movil" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="aso_correoelectronico" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="aso_nombretrabajo" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="aso_ocupacion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="aso_domiciliotrabajo" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="aso_telefonotrabajo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="aso_extension" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="aso_nombrefamiliar" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="aso_parentesco" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="aso_telefonofamiliar" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="aso_movilfamiliar" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="aso_fechaingreso" Type="DateTime" Nullable="false" />
         </EntityType>
         <EntityType Name="v_rep_usuarios">
           <Key>
@@ -4639,7 +4967,7 @@ FROM `v_rep_usuarios` AS `v_rep_usuarios`</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -5016,6 +5344,10 @@ FROM `v_rep_usuarios` AS `v_rep_usuarios`</DefiningQuery>
           <EntitySetMapping Name="v_rep_consulta_operaciones_realizadas">
             <EntityTypeMapping TypeName="bdcasaprestamosModel.v_rep_consulta_operaciones_realizadas">
               <MappingFragment StoreEntitySet="v_rep_consulta_operaciones_realizadas">
+                <ScalarProperty Name="aso_domicilio_completo" ColumnName="aso_domicilio_completo" />
+                <ScalarProperty Name="prestamos_pagados" ColumnName="prestamos_pagados" />
+                <ScalarProperty Name="prestamos_por_pagar" ColumnName="prestamos_por_pagar" />
+                <ScalarProperty Name="cantidad_prestamos" ColumnName="cantidad_prestamos" />
                 <ScalarProperty Name="p_pag_total___t_tra_total" ColumnName="p.pag_total - t.tra_total" />
                 <ScalarProperty Name="aso_fechaingreso" ColumnName="aso_fechaingreso" />
                 <ScalarProperty Name="aso_movilfamiliar" ColumnName="aso_movilfamiliar" />
@@ -5478,12 +5810,16 @@ FROM `v_rep_usuarios` AS `v_rep_usuarios`</DefiningQuery>
           <EntitySetMapping Name="v_rep_prestamos_historial">
             <EntityTypeMapping TypeName="bdcasaprestamosModel.v_rep_prestamos_historial">
               <MappingFragment StoreEntitySet="v_rep_prestamos_historial">
+                <ScalarProperty Name="aso_domicilio_completo" ColumnName="aso_domicilio_completo" />
                 <ScalarProperty Name="pre_fechaprestamo" ColumnName="pre_fechaprestamo" />
                 <ScalarProperty Name="pre_interes" ColumnName="pre_interes" />
                 <ScalarProperty Name="pre_tipo" ColumnName="pre_tipo" />
                 <ScalarProperty Name="pre_cuotas" ColumnName="pre_cuotas" />
                 <ScalarProperty Name="pre_credito" ColumnName="pre_credito" />
                 <ScalarProperty Name="pre_id" ColumnName="pre_id" />
+                <ScalarProperty Name="aso_correoelectronico" ColumnName="aso_correoelectronico" />
+                <ScalarProperty Name="aso_telefono" ColumnName="aso_telefono" />
+                <ScalarProperty Name="aso_movil" ColumnName="aso_movil" />
                 <ScalarProperty Name="aso_nombre" ColumnName="aso_nombre" />
                 <ScalarProperty Name="aso_id" ColumnName="aso_id" />
               </MappingFragment>
@@ -5705,6 +6041,73 @@ FROM `v_rep_usuarios` AS `v_rep_usuarios`</DefiningQuery>
                 <ScalarProperty Name="pre_cuotas" ColumnName="pre_cuotas" />
                 <ScalarProperty Name="pre_credito" ColumnName="pre_credito" />
                 <ScalarProperty Name="pre_id" ColumnName="pre_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="v_rep_ticket">
+            <EntityTypeMapping TypeName="bdcasaprestamosModel.v_rep_ticket">
+              <MappingFragment StoreEntitySet="v_rep_ticket">
+                <ScalarProperty Name="aso_fechaingreso" ColumnName="aso_fechaingreso" />
+                <ScalarProperty Name="aso_movilfamiliar" ColumnName="aso_movilfamiliar" />
+                <ScalarProperty Name="aso_telefonofamiliar" ColumnName="aso_telefonofamiliar" />
+                <ScalarProperty Name="aso_parentesco" ColumnName="aso_parentesco" />
+                <ScalarProperty Name="aso_nombrefamiliar" ColumnName="aso_nombrefamiliar" />
+                <ScalarProperty Name="aso_extension" ColumnName="aso_extension" />
+                <ScalarProperty Name="aso_telefonotrabajo" ColumnName="aso_telefonotrabajo" />
+                <ScalarProperty Name="aso_domiciliotrabajo" ColumnName="aso_domiciliotrabajo" />
+                <ScalarProperty Name="aso_ocupacion" ColumnName="aso_ocupacion" />
+                <ScalarProperty Name="aso_nombretrabajo" ColumnName="aso_nombretrabajo" />
+                <ScalarProperty Name="aso_correoelectronico" ColumnName="aso_correoelectronico" />
+                <ScalarProperty Name="aso_movil" ColumnName="aso_movil" />
+                <ScalarProperty Name="aso_telefono" ColumnName="aso_telefono" />
+                <ScalarProperty Name="aso_tipodeingreso" ColumnName="aso_tipodeingreso" />
+                <ScalarProperty Name="aso_estado" ColumnName="aso_estado" />
+                <ScalarProperty Name="aso_municipio" ColumnName="aso_municipio" />
+                <ScalarProperty Name="aso_localidad" ColumnName="aso_localidad" />
+                <ScalarProperty Name="aso_colonia" ColumnName="aso_colonia" />
+                <ScalarProperty Name="aso_codigopostal" ColumnName="aso_codigopostal" />
+                <ScalarProperty Name="aso_referenciascalles" ColumnName="aso_referenciascalles" />
+                <ScalarProperty Name="aso_referenciasdomicilio" ColumnName="aso_referenciasdomicilio" />
+                <ScalarProperty Name="aso_domicilio" ColumnName="aso_domicilio" />
+                <ScalarProperty Name="aso_estadocivil" ColumnName="aso_estadocivil" />
+                <ScalarProperty Name="aso_fechanacimiento" ColumnName="aso_fechanacimiento" />
+                <ScalarProperty Name="aso_sexo" ColumnName="aso_sexo" />
+                <ScalarProperty Name="aso_apellidos" ColumnName="aso_apellidos" />
+                <ScalarProperty Name="aso_nombre" ColumnName="aso_nombre" />
+                <ScalarProperty Name="aso_id" ColumnName="aso_id" />
+                <ScalarProperty Name="pag_prestamo" ColumnName="pag_prestamo" />
+                <ScalarProperty Name="pag_fechapagado" ColumnName="pag_fechapagado" />
+                <ScalarProperty Name="pag_pagado" ColumnName="pag_pagado" />
+                <ScalarProperty Name="pag_fechapago" ColumnName="pag_fechapago" />
+                <ScalarProperty Name="pag_total" ColumnName="pag_total" />
+                <ScalarProperty Name="pag_interes" ColumnName="pag_interes" />
+                <ScalarProperty Name="pag_importe" ColumnName="pag_importe" />
+                <ScalarProperty Name="pag_credito" ColumnName="pag_credito" />
+                <ScalarProperty Name="pag_id" ColumnName="pag_id" />
+                <ScalarProperty Name="pre_asociado" ColumnName="pre_asociado" />
+                <ScalarProperty Name="pre_observaciones" ColumnName="pre_observaciones" />
+                <ScalarProperty Name="pre_primerpago" ColumnName="pre_primerpago" />
+                <ScalarProperty Name="pre_fechaprestamo" ColumnName="pre_fechaprestamo" />
+                <ScalarProperty Name="pre_total" ColumnName="pre_total" />
+                <ScalarProperty Name="pre_totalinteres" ColumnName="pre_totalinteres" />
+                <ScalarProperty Name="pre_interesfinal" ColumnName="pre_interesfinal" />
+                <ScalarProperty Name="pre_meses" ColumnName="pre_meses" />
+                <ScalarProperty Name="pre_semenas" ColumnName="pre_semenas" />
+                <ScalarProperty Name="pre_interes" ColumnName="pre_interes" />
+                <ScalarProperty Name="pre_tipo" ColumnName="pre_tipo" />
+                <ScalarProperty Name="pre_cuotas" ColumnName="pre_cuotas" />
+                <ScalarProperty Name="pre_credito" ColumnName="pre_credito" />
+                <ScalarProperty Name="pre_id" ColumnName="pre_id" />
+                <ScalarProperty Name="ope_hora" ColumnName="ope_hora" />
+                <ScalarProperty Name="ope_fecha" ColumnName="ope_fecha" />
+                <ScalarProperty Name="ope_id" ColumnName="ope_id" />
+                <ScalarProperty Name="tra_operacion" ColumnName="tra_operacion" />
+                <ScalarProperty Name="tra_pago" ColumnName="tra_pago" />
+                <ScalarProperty Name="tra_total" ColumnName="tra_total" />
+                <ScalarProperty Name="tra_interes" ColumnName="tra_interes" />
+                <ScalarProperty Name="tra_subtotal" ColumnName="tra_subtotal" />
+                <ScalarProperty Name="tra_fecha" ColumnName="tra_fecha" />
+                <ScalarProperty Name="tra_id" ColumnName="tra_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

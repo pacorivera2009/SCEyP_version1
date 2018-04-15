@@ -36,7 +36,7 @@ namespace Views
             notificacion.ShowAlways = true;
             notificacion.SetToolTip(this.btnBuscar, "De clíc aquí o presione Ctrl + F2 para buscar un socio");
             notificacion.SetToolTip(this.btnPagar, "De clíc aquí para realizar el pago (presione F4) o si desea cancelar la operación actual presione F3");
-            notificacion.SetToolTip(this.button1, "De clíc aquí para abrir el Menú de búsqueda de número de operaciones");
+            //notificacion.SetToolTip(this.button1, "De clíc aquí para abrir el Menú de búsqueda de número de operaciones");
         }
 
         private void txtClave_KeyPress(object sender, KeyPressEventArgs e)
@@ -101,7 +101,6 @@ namespace Views
                             txtPagado.Enabled = true;
                             txtRecibido.Enabled = true;
                             btnPagar.Enabled = true;
-                            button1.Enabled = true;
 
                             checkBox1.Checked = false;
                             checkBox3.Checked = false;
@@ -118,8 +117,6 @@ namespace Views
 
                             txtPagado.Enabled = false;
                             txtClave.Enabled = true;
-
-                            button1.Enabled = false;
 
                             checkBox1.Checked = false;
                             checkBox3.Checked = false;
@@ -341,18 +338,18 @@ namespace Views
                             else
                             {
                                 DialogResult mensaje = MessageBox.Show("¿Confirma el pago?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+                                long id_operacion = 0;
                                 if (mensaje == DialogResult.Yes)
                                 {
                                     decimal pagado = decimal.Parse(txtPagado.Text);
 
-                                    long id_operacion = cajacontroller.agregarOperacion(Convert.ToDateTime(DateTime.Now.ToShortDateString()), Convert.ToDateTime(DateTime.Now.ToShortTimeString()));
+                                    id_operacion = cajacontroller.agregarOperacion(Convert.ToDateTime(DateTime.Now.ToShortDateString()), Convert.ToDateTime(DateTime.Now.ToShortTimeString()));
 
                                     for (int i = 0; i < dgvPagos.RowCount; i++)
                                     {
                                         decimal valor_monto = decimal.Parse(dgvPagos.Rows[i].Cells[6].Value.ToString());
 
-                                        cajacontroller.agregarTransaccion(Convert.ToDateTime(DateTime.Now.ToShortDateString()), valor_monto, id_operacion, Convert.ToInt64(dgvPagos.Rows[i].Cells[0].Value.ToString()));
+                                        cajacontroller.agregarTransaccion(Convert.ToDateTime(DateTime.Now.ToShortDateString()), pagado, id_operacion, Convert.ToInt64(dgvPagos.Rows[i].Cells[0].Value.ToString()));
 
                                         if (pagado <= decimal.Parse(dgvPagos.Rows[i].Cells[6].Value.ToString()))
                                         {
@@ -384,12 +381,20 @@ namespace Views
                                         MessageBox.Show("¡El pago ha sido realizado con éxito No. de operación: " + id_operacion.ToString() +"!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     }
 
+                                    Reportes.Ticket ticket_pago = new Reportes.Ticket();
+                                    ticket_pago.id = id_operacion;
+                                    ticket_pago.ShowDialog();
+
                                     dgvPagos.DataSource = null;
 
                                     groupBox3.Enabled = false;
                                     groupBox1.Enabled = true;
 
-                                    button1.Enabled = false;
+                                    btnPagar.Enabled = false;
+
+                                    checkBox1.Checked = false;
+                                    checkBox2.Checked = false;
+                                    checkBox3.Checked = false;
 
                                     txtCelular.Clear();
                                     txtTelefono.Clear();
@@ -567,8 +572,6 @@ namespace Views
                     groupBox3.Enabled = false;
                     groupBox1.Enabled = true;
 
-                    button1.Enabled = false;
-
                     txtCelular.Clear();
                     txtTelefono.Clear();
                     txtNombre.Clear();
@@ -580,6 +583,10 @@ namespace Views
                     txtPagado.Enabled = false;
                     txtRecibido.Clear();
                     txtRecibido.Enabled = false;
+
+                    checkBox1.Checked = false;
+                    checkBox2.Checked = false;
+                    checkBox3.Checked = false;
 
                     btnPagar.Enabled = false;
 
@@ -649,10 +656,10 @@ namespace Views
 
         private void operacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(button1.Enabled == true)
-            {
-                button1_Click(sender, e);
-            }
+        //    if(button1.Enabled == true)
+        //    {
+        //        button1_Click(sender, e);
+        //    }
         }
     }
 }

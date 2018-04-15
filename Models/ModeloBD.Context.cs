@@ -82,6 +82,7 @@ namespace Models
         public DbSet<v_rep_tarjeton_asociados> v_rep_tarjeton_asociados { get; set; }
         public DbSet<v_rep_tarjeton_pagos> v_rep_tarjeton_pagos { get; set; }
         public DbSet<v_rep_tarjeton_prestamos> v_rep_tarjeton_prestamos { get; set; }
+        public DbSet<v_rep_ticket> v_rep_ticket { get; set; }
         public DbSet<v_rep_usuarios> v_rep_usuarios { get; set; }
     }
 }

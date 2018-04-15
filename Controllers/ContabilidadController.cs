@@ -70,8 +70,8 @@ namespace Controllers
                     DateTime fecha_i = Convert.ToDateTime(fecha_inicio);
                     DateTime fecha_f = Convert.ToDateTime(fecha_fin);
 
-                    long totalEntradas = bd.contabilidad.Where(c => c.con_operacion == "E" || c.con_operacion == "C" && (c.con_fecha >= fecha_i && c.con_fecha <= fecha_f)).LongCount();
-                    long totalSalidas = bd.contabilidad.Where(c => c.con_operacion == "S" && (c.con_fecha >= fecha_i && c.con_fecha <= fecha_f)).LongCount();
+                    long totalEntradas = bd.contabilidad.Where(c => (c.con_operacion == "E" || c.con_operacion == "C") && (c.con_fecha >= fecha_i && c.con_fecha <= fecha_f)).LongCount();
+                    long totalSalidas = bd.contabilidad.Where(c =>( c.con_operacion == "S") && (c.con_fecha >= fecha_i && c.con_fecha <= fecha_f)).LongCount();
 
                     if (totalEntradas == 0)
                     {
@@ -79,7 +79,7 @@ namespace Controllers
                     }
                     else
                     {
-                        entradasT = bd.contabilidad.Where(c => c.con_operacion == "E" || c.con_operacion == "C" && (c.con_fecha >= fecha_i && c.con_fecha <= fecha_f)).Sum(c => c.con_total);
+                        entradasT = bd.contabilidad.Where(c => (c.con_operacion == "E" || c.con_operacion == "C") && (c.con_fecha >= fecha_i && c.con_fecha <= fecha_f)).Sum(c => c.con_total);
                     }
 
                     if (totalSalidas == 0)
@@ -88,7 +88,7 @@ namespace Controllers
                     }
                     else
                     {
-                        salidasT = bd.contabilidad.Where(c => c.con_operacion == "S" && (c.con_fecha >= fecha_i && c.con_fecha <= fecha_f)).Sum(c => c.con_total);
+                        salidasT = bd.contabilidad.Where(c => (c.con_operacion == "S")&& (c.con_fecha >= fecha_i && c.con_fecha <= fecha_f)).Sum(c => c.con_total);
                     }
 
                     totalT = entradasT + salidasT;

@@ -93,12 +93,14 @@
     <Compile Include="ContabilidadController.cs" />
     <Compile Include="EstadisticasController.cs" />
     <Compile Include="Historial_Pagos_Controller.cs" />
+    <Compile Include="Historial_PrestamosController.cs" />
     <Compile Include="LoginController.cs" />
     <Compile Include="MenuController.cs" />
     <Compile Include="OperacionesController.cs" />
     <Compile Include="PersonalController.cs" />
     <Compile Include="PrestamosController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relacion_Socios_AdeudanController.cs" />
     <Compile Include="Rep_ContabilidadController.cs" />
     <Compile Include="Rep_DeudoresController.cs" />
     <Compile Include="Rep_PersonalController.cs" />
@@ -108,6 +110,7 @@
     <Compile Include="Rep_UsuariosController.cs" />
     <Compile Include="Seguridad.cs" />
     <Compile Include="SociosController.cs" />
+    <Compile Include="Ticket.cs" />
     <Compile Include="UsuariosController.cs" />
   </ItemGroup>
   <ItemGroup>

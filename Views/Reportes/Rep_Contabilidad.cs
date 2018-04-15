@@ -15,6 +15,12 @@ namespace Views.Reportes
     public partial class Rep_Contabilidad : Form
     {
         Rep_ContabilidadController reporte = new Rep_ContabilidadController();
+        
+        public DateTime fecha_inicio { get; set; }
+        public DateTime fecha_fin { get; set; }
+
+        public int tipo_busqueda { get; set; }
+
         public Rep_Contabilidad()
         {
             InitializeComponent();
@@ -24,10 +30,21 @@ namespace Views.Reportes
         {
             try
             {
-                IQueryable datos = reporte.contabilidad();
+                IQueryable datos;
 
                 reportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local;
-                reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSetBD", datos));
+
+                if (tipo_busqueda == 1)
+                {
+                    datos = reporte.contabilidad();
+                    reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSetBD", datos));
+                }
+
+                if(tipo_busqueda == 2)
+                {
+                    datos = reporte.contabilidad_escala(fecha_inicio, fecha_fin);
+                    reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSetBD", datos));
+                }
 
                 reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
                 reportViewer1.ZoomMode = ZoomMode.Percent;

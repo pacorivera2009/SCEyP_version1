@@ -40,28 +40,38 @@ namespace Views
                                   {
                                       c.con_id,
                                       c.con_concepto,
-                                      monto = "$ " + c.con_monto,
-                                      interes = "$ " + c.con_interes,
-                                      total = "$ " + c.con_total,
+                                      monto = c.con_monto.ToString("C"),
+                                      interes = c.con_interes.ToString("C"),
+                                      total = c.con_total.ToString("C"),
                                       c.con_fecha
                                   };
 
-                    dgvPrestamos.DataSource = listado.ToList();
+                    if (listado.ToList().Count == 0)
+                    {
+                        dgvPrestamos.DataSource = null;
 
-                    dgvPrestamos.Columns[0].HeaderText = "Clave";
-                    dgvPrestamos.Columns[1].HeaderText = "Concepto";
-                    dgvPrestamos.Columns[2].HeaderText = "Monto";
-                    dgvPrestamos.Columns[3].HeaderText = "Intéres";
-                    dgvPrestamos.Columns[4].HeaderText = "Total";
-                    dgvPrestamos.Columns[5].HeaderText = "Fecha";
+                    }
+                    else
+                    {
+                        dgvPrestamos.DataSource = listado.ToList();
+
+                        dgvPrestamos.Columns[0].HeaderText = "Clave";
+                        dgvPrestamos.Columns[1].HeaderText = "Concepto";
+                        dgvPrestamos.Columns[2].HeaderText = "Monto";
+                        dgvPrestamos.Columns[3].HeaderText = "Intéres";
+                        dgvPrestamos.Columns[4].HeaderText = "Total";
+                        dgvPrestamos.Columns[5].HeaderText = "Fecha";
+                    }
+
+                        
 
                     var contabilidad_totales = contabilidadcontroller.contabilidadTotales(null, null).ToList();
 
                     foreach (var valores in contabilidad_totales)
                     {
-                        txtTotalEntradas.Text = "$ " + valores.totalentradas.ToString();
-                        txtTotalSalidas.Text = "$ " + valores.totalsalidas.ToString();
-                        txtTotal.Text = "$ " + valores.total.ToString();
+                        txtTotalEntradas.Text = valores.totalentradas.ToString("C");
+                        txtTotalSalidas.Text = valores.totalsalidas.ToString("C");
+                        txtTotal.Text = valores.total.ToString("C");
                     }
                 }
                 else //PRESTAMOS BUSCADOS MEDIANTE UN RANGO DE FECHA
@@ -73,28 +83,36 @@ namespace Views
                                   {
                                       c.con_id,
                                       c.con_concepto,
-                                      monto = "$ " + c.con_monto,
-                                      interes = "$ " + c.con_interes,
-                                      total = "$ " + c.con_total,
+                                      monto = c.con_monto.ToString("C"),
+                                      interes = c.con_interes.ToString("C"),
+                                      total = c.con_total.ToString("C"),
                                       c.con_fecha
                                   };
 
-                    dgvPrestamos.DataSource = listado.ToList();
+                    if (listado.ToList().Count == 0)
+                    {
+                        dgvPrestamos.DataSource = null;
 
-                    dgvPrestamos.Columns[0].HeaderText = "Clave";
-                    dgvPrestamos.Columns[1].HeaderText = "Concepto";
-                    dgvPrestamos.Columns[2].HeaderText = "Monto";
-                    dgvPrestamos.Columns[3].HeaderText = "Intéres";
-                    dgvPrestamos.Columns[4].HeaderText = "Total";
-                    dgvPrestamos.Columns[5].HeaderText = "Fecha";
+                    }
+                    else
+                    {
+                        dgvPrestamos.DataSource = listado.ToList();
+
+                        dgvPrestamos.Columns[0].HeaderText = "Clave";
+                        dgvPrestamos.Columns[1].HeaderText = "Concepto";
+                        dgvPrestamos.Columns[2].HeaderText = "Monto";
+                        dgvPrestamos.Columns[3].HeaderText = "Intéres";
+                        dgvPrestamos.Columns[4].HeaderText = "Total";
+                        dgvPrestamos.Columns[5].HeaderText = "Fecha";
+                    }
 
                     var contabilidad_totales = contabilidadcontroller.contabilidadTotales(dateTimePicker1.Value.ToShortDateString(), dateTimePicker2.Value.ToShortDateString()).ToList();
 
                     foreach (var valores in contabilidad_totales)
                     {
-                        txtTotalEntradas.Text = "$ " + valores.totalentradas.ToString();
-                        txtTotalSalidas.Text = "$ " + valores.totalsalidas.ToString();
-                        txtTotal.Text = "$ " + valores.total.ToString();
+                        txtTotalEntradas.Text = valores.totalentradas.ToString("C");
+                        txtTotalSalidas.Text = valores.totalsalidas.ToString("C");
+                        txtTotal.Text = valores.total.ToString("C");
                     }
                 }
             }
@@ -131,23 +149,32 @@ namespace Views
                                   c.con_fecha
                               };
 
-                dgvPrestamos.DataSource = listado.ToList();
+                if (listado.ToList().Count == 0)
+                {
+                    dgvPrestamos.DataSource = null;
+                }
+                else
+                {
+                    dgvPrestamos.DataSource = listado.ToList();
 
-                dgvPrestamos.Columns[0].HeaderText = "Clave";
-                dgvPrestamos.Columns[1].HeaderText = "Concepto";
-                dgvPrestamos.Columns[2].HeaderText = "Monto";
-                dgvPrestamos.Columns[3].HeaderText = "Intéres";
-                dgvPrestamos.Columns[4].HeaderText = "Total";
-                dgvPrestamos.Columns[5].HeaderText = "Fecha";
+                    dgvPrestamos.Columns[0].HeaderText = "Clave";
+                    dgvPrestamos.Columns[1].HeaderText = "Concepto";
+                    dgvPrestamos.Columns[2].HeaderText = "Monto";
+                    dgvPrestamos.Columns[3].HeaderText = "Intéres";
+                    dgvPrestamos.Columns[4].HeaderText = "Total";
+                    dgvPrestamos.Columns[5].HeaderText = "Fecha";
+                }
 
                 var contabilidad_totales = contabilidadcontroller.contabilidadTotales(null, null).ToList();
 
                 foreach(var valores in contabilidad_totales)
                 {
-                    txtTotalEntradas.Text = "$ " + valores.totalentradas.ToString();
-                    txtTotalSalidas.Text = "$ " + valores.totalsalidas.ToString();
-                    txtTotal.Text = "$ " + valores.total.ToString();
+                    txtTotalEntradas.Text = valores.totalentradas.ToString("C");
+                    txtTotalSalidas.Text = valores.totalsalidas.ToString("C");
+                    txtTotal.Text = valores.total.ToString("C");
                 }
+
+                dateTimePicker2.MinDate = dateTimePicker1.Value;
             }
             catch (Exception ex)
             {
@@ -170,13 +197,37 @@ namespace Views
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            DialogResult mensaje = MessageBox.Show("¿Desea mostrar el reporte de contabilidad?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if(mensaje == DialogResult.Yes)
+            if(dgvPrestamos.CurrentRow != null)
             {
-                Reportes.Rep_Contabilidad imprimir = new Reportes.Rep_Contabilidad();
-                imprimir.ShowDialog();
+                DialogResult mensaje = MessageBox.Show("¿Desea mostrar el reporte de contabilidad?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (mensaje == DialogResult.Yes)
+                {
+                    Reportes.Rep_Contabilidad imprimir = new Reportes.Rep_Contabilidad();
+
+                    if(radioButton1.Checked == true)
+                    {
+                        imprimir.fecha_inicio = Convert.ToDateTime("01/01/1753");
+                        imprimir.fecha_fin = Convert.ToDateTime("01/01/1753");
+                        imprimir.tipo_busqueda = 1;
+                    }
+
+                    if(radioButton2.Checked == true)
+                    {
+                        imprimir.fecha_inicio = Convert.ToDateTime(dateTimePicker1.Value.ToShortDateString());
+                        imprimir.fecha_fin = Convert.ToDateTime(dateTimePicker2.Value.ToShortDateString());
+                        imprimir.tipo_busqueda = 2;
+                    }
+
+                    imprimir.ShowDialog();
+                }
             }
+            else
+            {
+                MessageBox.Show("¡Sin resultados encontrados", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            
         }
 
         private void btnCorteMensual_Click(object sender, EventArgs e)
@@ -204,20 +255,28 @@ namespace Views
                                       {
                                           c.con_id,
                                           c.con_concepto,
-                                          monto = "$ " + c.con_monto,
-                                          interes = "$ " + c.con_interes,
-                                          total = "$ " + c.con_total,
+                                          monto = c.con_monto.ToString("C"),
+                                          interes = c.con_interes.ToString("C"),
+                                          total = c.con_total.ToString("C"),
                                           c.con_fecha
                                       };
 
-                        dgvPrestamos.DataSource = listado.ToList();
+                        if (listado.ToList().Count == 0)
+                        {
+                            dgvPrestamos.DataSource = null;
 
-                        dgvPrestamos.Columns[0].HeaderText = "Clave";
-                        dgvPrestamos.Columns[1].HeaderText = "Concepto";
-                        dgvPrestamos.Columns[2].HeaderText = "Monto";
-                        dgvPrestamos.Columns[3].HeaderText = "Intéres";
-                        dgvPrestamos.Columns[4].HeaderText = "Total";
-                        dgvPrestamos.Columns[5].HeaderText = "Fecha";
+                        }
+                        else
+                        {
+                            dgvPrestamos.DataSource = listado.ToList();
+
+                            dgvPrestamos.Columns[0].HeaderText = "Clave";
+                            dgvPrestamos.Columns[1].HeaderText = "Concepto";
+                            dgvPrestamos.Columns[2].HeaderText = "Monto";
+                            dgvPrestamos.Columns[3].HeaderText = "Intéres";
+                            dgvPrestamos.Columns[4].HeaderText = "Total";
+                            dgvPrestamos.Columns[5].HeaderText = "Fecha";
+                        }
 
                         var contabilidad_totales = contabilidadcontroller.contabilidadTotales(null, null).ToList();
 
@@ -251,6 +310,19 @@ namespace Views
         private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             btnBuscar_Click(sender, e);
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePicker2.MinDate = dateTimePicker1.Value;
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            if(Convert.ToDateTime(dateTimePicker2.Value.ToShortDateString()) > Convert.ToDateTime(dateTimePicker1.Value.ToShortDateString()))
+            {
+                dateTimePicker2.MinDate = dateTimePicker1.Value;
+            }
         }
     }
 }

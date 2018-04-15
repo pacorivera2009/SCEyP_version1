@@ -76,5 +76,9 @@ namespace Models
         public string aso_movilfamiliar { get; set; }
         public System.DateTime aso_fechaingreso { get; set; }
         public decimal p_pag_total___t_tra_total { get; set; }
+        public Nullable<long> cantidad_prestamos { get; set; }
+        public Nullable<long> prestamos_por_pagar { get; set; }
+        public Nullable<long> prestamos_pagados { get; set; }
+        public string aso_domicilio_completo { get; set; }
     }
 }

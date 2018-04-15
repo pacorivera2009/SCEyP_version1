@@ -183,6 +183,13 @@
     <Compile Include="Historial_Pagos.Designer.cs">
       <DependentUpon>Historial_Pagos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Historial_Prestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Historial_Prestamos.Designer.cs">
+      <DependentUpon>Historial_Prestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresora.cs" />
     <Compile Include="Informacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +264,36 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relación_Socios_Adeudan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relación_Socios_Adeudan.Designer.cs">
+      <DependentUpon>Relación_Socios_Adeudan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Rep_HistorialPrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Rep_HistorialPrestamos.Designer.cs">
+      <DependentUpon>Rep_HistorialPrestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Rep_SociosAdeudan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Rep_SociosAdeudan.Designer.cs">
+      <DependentUpon>Rep_SociosAdeudan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Rep_SociosDebe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Rep_SociosDebe.Designer.cs">
+      <DependentUpon>Rep_SociosDebe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ticket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ticket.Designer.cs">
+      <DependentUpon>Ticket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes_menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -439,6 +476,9 @@
     <EmbeddedResource Include="Historial_Pagos.resx">
       <DependentUpon>Historial_Pagos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Historial_Prestamos.resx">
+      <DependentUpon>Historial_Prestamos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Informacion.resx">
       <DependentUpon>Informacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -485,6 +525,25 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Relación_Socios_Adeudan.resx">
+      <DependentUpon>Relación_Socios_Adeudan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rep_HistorialPrestamos.rdlc" />
+    <EmbeddedResource Include="Reportes\Rep_HistorialPrestamos.resx">
+      <DependentUpon>Rep_HistorialPrestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rep_SociosAdeudan.rdlc" />
+    <EmbeddedResource Include="Reportes\Rep_SociosAdeudan.resx">
+      <DependentUpon>Rep_SociosAdeudan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rep_SociosDebe.rdlc" />
+    <EmbeddedResource Include="Reportes\Rep_SociosDebe.resx">
+      <DependentUpon>Rep_SociosDebe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ticket.rdlc" />
+    <EmbeddedResource Include="Reportes\Ticket.resx">
+      <DependentUpon>Ticket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes_menu.resx">
       <DependentUpon>Reportes_menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -608,21 +667,28 @@
     <None Include="Properties\DataSources\Models.transacciones.datasource" />
     <None Include="Properties\DataSources\Models.usuarios.datasource" />
     <None Include="Properties\DataSources\Models.v_rep_colonias.datasource" />
+    <None Include="Properties\DataSources\Models.v_rep_consulta_operaciones_realizadas.datasource" />
     <None Include="Properties\DataSources\Models.v_rep_estados.datasource" />
+    <None Include="Properties\DataSources\Models.v_rep_historial_pagos_socio.datasource" />
     <None Include="Properties\DataSources\Models.v_rep_localidades.datasource" />
     <None Include="Properties\DataSources\Models.v_rep_municipios.datasource" />
     <None Include="Properties\DataSources\Models.v_rep_pagospendientes.datasource" />
+    <None Include="Properties\DataSources\Models.v_rep_pagos_atrasados_socio.datasource" />
     <None Include="Properties\DataSources\Models.v_rep_pagos_pendientes_por_pagar.datasource" />
+    <None Include="Properties\DataSources\Models.v_rep_pagos_socio.datasource" />
     <None Include="Properties\DataSources\Models.v_rep_personal.datasource" />
     <None Include="Properties\DataSources\Models.v_rep_prestamos.datasource" />
     <None Include="Properties\DataSources\Models.v_rep_prestamosporpagar.datasource" />
+    <None Include="Properties\DataSources\Models.v_rep_prestamos_historial.datasource" />
     <None Include="Properties\DataSources\Models.v_rep_prestamos_pendientes_por_pagar.datasource" />
     <None Include="Properties\DataSources\Models.v_rep_socioindividual.datasource" />
     <None Include="Properties\DataSources\Models.v_rep_socios.datasource" />
     <None Include="Properties\DataSources\Models.v_rep_sociosdeudores.datasource" />
+    <None Include="Properties\DataSources\Models.v_rep_socios_adeudo.datasource" />
     <None Include="Properties\DataSources\Models.v_rep_socios_buen_aval.datasource" />
     <None Include="Properties\DataSources\Models.v_rep_socios_buen_historial.datasource" />
     <None Include="Properties\DataSources\Models.v_rep_tarjeton_prestamos.datasource" />
+    <None Include="Properties\DataSources\Models.v_rep_ticket.datasource" />
     <None Include="Properties\DataSources\Models.v_rep_totalapagar.datasource" />
     <None Include="Properties\DataSources\Models.v_rep_totalespagos.datasource" />
     <None Include="Properties\DataSources\Models.v_rep_usuarios.datasource" />

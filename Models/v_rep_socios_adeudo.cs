@@ -17,7 +17,7 @@ namespace Models
         public long aso_id { get; set; }
         public string aso_nombre { get; set; }
         public string aso_domicilio { get; set; }
-        public Nullable<decimal> pag_pagar { get; set; }
+        public decimal pag_pagar { get; set; }
         public Nullable<System.DateTime> pag_fechapago { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,34 @@ namespace Views.Reportes
 {
     public partial class Rep_HistorialPagosSocio : Form
     {
+        public long id { get; set; }
+
         public Rep_HistorialPagosSocio()
         {
             InitializeComponent();
+        }
+
+        private void Rep_HistorialPagosSocio_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                var bd = new Conexion();
+
+                IQueryable datos = bd.v_rep_consulta_operaciones_realizadas.Where(a => a.aso_id == id).OrderBy(a => a.ope_id);
+
+                reportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local;
+                reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSetBD", datos));
+                
+                reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
+                reportViewer1.ZoomMode = ZoomMode.Percent;
+                //Seleccionamos el zoom que deseamos utilizar. En este caso un 100%
+                reportViewer1.ZoomPercent = 100;
+                this.reportViewer1.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -16,11 +16,15 @@ namespace Models
     {
         public long aso_id { get; set; }
         public string aso_nombre { get; set; }
+        public string aso_movil { get; set; }
+        public string aso_telefono { get; set; }
+        public string aso_correoelectronico { get; set; }
         public long pre_id { get; set; }
         public decimal pre_credito { get; set; }
         public int pre_cuotas { get; set; }
         public string pre_tipo { get; set; }
         public int pre_interes { get; set; }
         public System.DateTime pre_fechaprestamo { get; set; }
+        public string aso_domicilio_completo { get; set; }
     }
 }

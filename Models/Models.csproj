@@ -243,6 +243,9 @@
     <Compile Include="v_rep_tarjeton_prestamos.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="v_rep_ticket.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="v_rep_usuarios.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
@@ -261,6 +264,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\v_rep_pagos_pendientes_por_pagar.datasource" />
     <None Include="Properties\DataSources\v_rep_pagos_pendientes_por_pagar1.datasource" />
+    <None Include="Properties\DataSources\v_rep_prestamos_historial.datasource" />
     <None Include="Properties\DataSources\v_rep_prestamos_pendientes_por_pagar.datasource" />
     <None Include="Properties\DataSources\v_rep_socios.datasource" />
     <None Include="Properties\DataSources\v_rep_sociosdeudores.datasource" />

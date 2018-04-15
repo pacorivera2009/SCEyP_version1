@@ -891,8 +891,11 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatCurrency(Fields!pag_credito.Value)</Value>
-                              <Style />
+                              <Value>=Fields!pag_credito.Value</Value>
+                              <Style>
+                                <Format>'$' #,0.00;('$' #,0.00)</Format>
+                                <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -923,8 +926,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatCurrency(Fields!pag_importe.Value)</Value>
-                              <Style />
+                              <Value>=Fields!pag_importe.Value</Value>
+                              <Style>
+                                <Format>'$' #,0.00;('$' #,0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -942,6 +947,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -955,8 +961,11 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatCurrency(Fields!pag_interes.Value)</Value>
-                              <Style />
+                              <Value>=Fields!pag_interes.Value</Value>
+                              <Style>
+                                <Format>'$' #,0.00;('$' #,0.00)</Format>
+                                <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -987,8 +996,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatCurrency(Fields!pag_total.Value)</Value>
-                              <Style />
+                              <Value>=Fields!pag_total.Value</Value>
+                              <Style>
+                                <Format>'$' #,0.00;('$' #,0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1006,6 +1017,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1092,8 +1104,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatCurrency(Math.Round(Sum(Fields!pag_importe.Value, "DataSetBD")))</Value>
-                              <Style />
+                              <Value>=Math.Round(Sum(Fields!pag_importe.Value, "DataSetBD"))</Value>
+                              <Style>
+                                <Format>'$' #,0.00;('$' #,0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1111,6 +1125,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1124,8 +1139,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatCurrency(Math.Round(Sum(Fields!pag_interes.Value, "DataSetBD")))</Value>
-                              <Style />
+                              <Value>=Math.Round(Sum(Fields!pag_interes.Value, "DataSetBD"))</Value>
+                              <Style>
+                                <Format>'$' #,0.00;('$' #,0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1143,6 +1160,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1156,8 +1174,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatCurrency(Math.Round(Sum(Fields!pag_total.Value, "DataSetBD")))</Value>
-                              <Style />
+                              <Value>=Math.Round(Sum(Fields!pag_total.Value, "DataSetBD"))</Value>
+                              <Style>
+                                <Format>'$' #,0.00;('$' #,0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1175,6 +1195,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-MX</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>

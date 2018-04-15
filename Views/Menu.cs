@@ -62,7 +62,7 @@ namespace Views
             notificacion3.ReshowDelay = 500;
             notificacion3.ShowAlways = true;
             notificacion3.SetToolTip(this.lblSubMenu31, "De clic aquí y accederá al menú Socios");
-            notificacion3.SetToolTip(this.lblSubMenu33, "De clic aquí y mostrará el(los) socio(s) registrado(s)");
+            notificacion3.SetToolTip(this.lblSubMenu32, "De clic aquí y mostrará el(los) socio(s) registrado(s)");
             //
 
             //TOOLTIP
@@ -118,30 +118,31 @@ namespace Views
                         {
                             //PRIVILEGIOS DEL USUARIO ENCARGADO
                             lblSubMenu11.Enabled = false;
-                            lblSubMenu12.Enabled = false;
+                            lblSubMenu12.Enabled = true;
                             lblSubMenu21.Enabled = false;
-                            lblSubMenu22.Enabled = false;
-                            lblSubMenu31.Enabled = true;
-                            lblSubMenu33.Enabled = true;
+                            lblSubMenu22.Enabled = true;
+                            lblSubMenu31.Enabled = false;
+                            lblSubMenu32.Enabled = true;
                             lblSubMenu41.Enabled = true;
                             lblSubMenu42.Enabled = true;
                             lblSubMenu43.Enabled = false;
-                            lblSubMenu44.Enabled = false;
-                            lblSubMenu51.Enabled = true;
+                            lblSubMenu44.Enabled = true;
+                            lblSubMenu51.Enabled = false;
                             lblSubMenu61.Enabled = true;
                             lblSubMenu62.Enabled = true;
                         }
                         else if(usuarios.usu_cargo == "COBRADOR")
                         {
                             //PRIVILEGIOS DEL USUARIO COBRADOR 
+                            
                             lblSubMenu11.Enabled = false;
                             lblSubMenu12.Enabled = false;
                             lblSubMenu21.Enabled = false;
                             lblSubMenu22.Enabled = false;
-                            lblSubMenu31.Enabled = true;
-                            lblSubMenu33.Enabled = false;
-                            lblSubMenu41.Enabled = false;
+                            lblSubMenu31.Enabled = false;
+                            lblSubMenu32.Enabled = true;
                             lblSubMenu42.Enabled = true;
+                            lblSubMenu41.Enabled = true;
                             lblSubMenu43.Enabled = false;
                             lblSubMenu44.Enabled = false;
                             lblSubMenu51.Enabled = false;
@@ -156,7 +157,7 @@ namespace Views
                             lblSubMenu21.Enabled = true;
                             lblSubMenu22.Enabled = true;
                             lblSubMenu31.Enabled = true;
-                            lblSubMenu33.Enabled = true;
+                            lblSubMenu32.Enabled = true;
                             lblSubMenu41.Enabled = true;
                             lblSubMenu42.Enabled = true;
                             lblSubMenu43.Enabled = true;
@@ -188,7 +189,11 @@ namespace Views
         {
             try
             {
+                timer1.Enabled = false;
+
                 lblTiempo.Text = DateTime.Now.ToLongDateString() + "   " + DateTime.Now.ToShortTimeString();
+
+                timer1.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -223,7 +228,7 @@ namespace Views
 
         private void lblSubMenu33_MouseLeave(object sender, EventArgs e)
         {
-            lblSubMenu33.ForeColor = Color.Black;
+            
         }
 
         private void lblSubMenu41_MouseLeave(object sender, EventArgs e)
@@ -287,7 +292,7 @@ namespace Views
         }
         private void lblSubMenu33_MouseMove(object sender, MouseEventArgs e)
         {
-            lblSubMenu33.ForeColor = Color.Red;
+            
         }
 
         private void lblSubMenu41_MouseMove(object sender, MouseEventArgs e)
@@ -407,8 +412,7 @@ namespace Views
 
         private void lblSubMenu33_Click(object sender, EventArgs e)
         {
-            Consultasocios consultasocios = new Consultasocios();
-            consultasocios.ShowDialog();
+            
         }
 
         private void lblSubMenu61_Click(object sender, EventArgs e)
@@ -427,7 +431,8 @@ namespace Views
 
         private void lblSubMenu42_Click(object sender, EventArgs e)
         {
-            CajaCobro caja = new CajaCobro();
+            //CajaCobro caja = new CajaCobro();
+            Caja caja = new Caja();
             caja.ShowDialog();
         }
 
@@ -450,6 +455,22 @@ namespace Views
 
             Reportes_menu menu = new Reportes_menu();
             menu.ShowDialog();
+        }
+
+        private void lblSubMenu32_Click(object sender, EventArgs e)
+        {
+            Consultasocios consultasocios = new Consultasocios();
+            consultasocios.ShowDialog();
+        }
+
+        private void lblSubMenu32_MouseLeave(object sender, EventArgs e)
+        {
+            lblSubMenu32.ForeColor = Color.Black;
+        }
+
+        private void lblSubMenu32_MouseMove(object sender, MouseEventArgs e)
+        {
+            lblSubMenu32.ForeColor = Color.Red;
         }
     }
 }

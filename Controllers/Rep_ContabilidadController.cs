@@ -14,5 +14,10 @@ namespace Controllers
         {
             return bd.v_rep_contabilidad.OrderBy(c => c.con_id);
         }
+
+        public IQueryable<v_rep_contabilidad> contabilidad_escala(DateTime inicio, DateTime fin)
+        {
+            return bd.v_rep_contabilidad.Where(c => c.con_fecha >= inicio && c.con_fecha >= fin).OrderBy(c => c.con_id);
+        }
     }
 }

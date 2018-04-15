@@ -48,7 +48,7 @@
             this.lblSubMenu62 = new System.Windows.Forms.Label();
             this.lblSubMenu61 = new System.Windows.Forms.Label();
             this.pMenu3 = new System.Windows.Forms.Panel();
-            this.lblSubMenu33 = new System.Windows.Forms.Label();
+            this.lblSubMenu32 = new System.Windows.Forms.Label();
             this.pbxMenu3 = new System.Windows.Forms.PictureBox();
             this.lblMenu3 = new System.Windows.Forms.Label();
             this.lblSubMenu31 = new System.Windows.Forms.Label();
@@ -120,7 +120,7 @@
             // lblSubMenu44
             // 
             this.lblSubMenu44.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubMenu44.Location = new System.Drawing.Point(55, 151);
+            this.lblSubMenu44.Location = new System.Drawing.Point(55, 124);
             this.lblSubMenu44.Name = "lblSubMenu44";
             this.lblSubMenu44.Size = new System.Drawing.Size(160, 28);
             this.lblSubMenu44.TabIndex = 18;
@@ -146,12 +146,13 @@
             // lblSubMenu43
             // 
             this.lblSubMenu43.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubMenu43.Location = new System.Drawing.Point(55, 124);
+            this.lblSubMenu43.Location = new System.Drawing.Point(55, 152);
             this.lblSubMenu43.Name = "lblSubMenu43";
             this.lblSubMenu43.Size = new System.Drawing.Size(151, 28);
             this.lblSubMenu43.TabIndex = 16;
             this.lblSubMenu43.Text = "Estadísticas";
             this.lblSubMenu43.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSubMenu43.Visible = false;
             this.lblSubMenu43.Click += new System.EventHandler(this.lblSubMenu43_Click);
             this.lblSubMenu43.MouseLeave += new System.EventHandler(this.lblSubMenu43_MouseLeave);
             this.lblSubMenu43.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblSubMenu43_MouseMove);
@@ -297,7 +298,7 @@
             // 
             this.pMenu3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pMenu3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pMenu3.Controls.Add(this.lblSubMenu33);
+            this.pMenu3.Controls.Add(this.lblSubMenu32);
             this.pMenu3.Controls.Add(this.pbxMenu3);
             this.pMenu3.Controls.Add(this.lblMenu3);
             this.pMenu3.Controls.Add(this.lblSubMenu31);
@@ -306,18 +307,18 @@
             this.pMenu3.Size = new System.Drawing.Size(220, 184);
             this.pMenu3.TabIndex = 23;
             // 
-            // lblSubMenu33
+            // lblSubMenu32
             // 
-            this.lblSubMenu33.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubMenu33.Location = new System.Drawing.Point(49, 105);
-            this.lblSubMenu33.Name = "lblSubMenu33";
-            this.lblSubMenu33.Size = new System.Drawing.Size(166, 28);
-            this.lblSubMenu33.TabIndex = 22;
-            this.lblSubMenu33.Text = "Reporte de socios";
-            this.lblSubMenu33.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblSubMenu33.Click += new System.EventHandler(this.lblSubMenu33_Click);
-            this.lblSubMenu33.MouseLeave += new System.EventHandler(this.lblSubMenu33_MouseLeave);
-            this.lblSubMenu33.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblSubMenu33_MouseMove);
+            this.lblSubMenu32.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubMenu32.Location = new System.Drawing.Point(49, 105);
+            this.lblSubMenu32.Name = "lblSubMenu32";
+            this.lblSubMenu32.Size = new System.Drawing.Size(166, 28);
+            this.lblSubMenu32.TabIndex = 22;
+            this.lblSubMenu32.Text = "Reporte de socios";
+            this.lblSubMenu32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSubMenu32.Click += new System.EventHandler(this.lblSubMenu32_Click);
+            this.lblSubMenu32.MouseLeave += new System.EventHandler(this.lblSubMenu32_MouseLeave);
+            this.lblSubMenu32.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblSubMenu32_MouseMove);
             // 
             // pbxMenu3
             // 
@@ -609,7 +610,7 @@
         private System.Windows.Forms.Label lblSubMenu62;
         private System.Windows.Forms.Label lblSubMenu61;
         private System.Windows.Forms.Panel pMenu3;
-        private System.Windows.Forms.Label lblSubMenu33;
+        private System.Windows.Forms.Label lblSubMenu32;
         private System.Windows.Forms.PictureBox pbxMenu3;
         private System.Windows.Forms.Label lblMenu3;
         private System.Windows.Forms.Label lblSubMenu31;
