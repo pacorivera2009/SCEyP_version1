@@ -417,7 +417,7 @@ namespace Views
 
                 cbxEstado.SelectedIndex = -1;
 
-                dtpFechanacimiento.MaxDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+                
             }
             catch(Exception ex)
             {
