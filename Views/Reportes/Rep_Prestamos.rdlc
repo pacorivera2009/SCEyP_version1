@@ -1325,7 +1325,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>JOSE DE JESUS GARCIA JAUREGUI</Value>
+                <Value>JOSÉ DE JESÚS GARCIA JAUREGUI</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -1529,7 +1529,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Durante el tiempo que se encuentre vigente el contrato, el prestamista se obliga a pagar la cantidad de dinero que le fue otorgada adicional a un interés mensual (mostrado en el tabulador de pagos).</Value>
+                <Value>Durante el tiempo que se encuentre vigente el contrato, el prestatario se obliga a pagar la cantidad de dinero que le fue otorgada adicional a un interés mensual (mostrado en el tabulador de pagos).</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontWeight>Normal</FontWeight>
@@ -1661,7 +1661,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>1. El prestamista se compromete a entregar cada día de pago de acuerdo al calendario de pagos al prestador.</Value>
+                <Value>1. El prestatario se compromete a entregar cada día de pago de acuerdo al calendario de pagos al prestador.</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontWeight>Normal</FontWeight>
@@ -1800,7 +1800,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>LEANDRO VALLE #11, COL. CENTRO, IGUALA DE LA INDEPENDENCIA, GUERRERO</Value>
+                <Value>LEANDRO VALLE #16, COL. CENTRO, IGUALA DE LA INDEPENDENCIA, GUERRERO</Value>
                 <Style>
                   <FontStyle>Italic</FontStyle>
                   <FontWeight>Normal</FontWeight>
@@ -2343,7 +2343,7 @@
   <Width>6.71342in</Width>
   <Page>
     <PageHeader>
-      <Height>3.64509cm</Height>
+      <Height>2.53384cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -2427,37 +2427,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox13">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>ING. JOSE DE JESUS GARCIA JAUREGUI</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>1.84509cm</Top>
-          <Height>0.6cm</Height>
-          <Width>17.05209cm</Width>
-          <ZIndex>3</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
         <Textbox Name="Textbox15">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -2477,10 +2446,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
-          <Top>2.51592cm</Top>
+          <Top>1.88092cm</Top>
           <Height>0.6cm</Height>
           <Width>17.05209cm</Width>
-          <ZIndex>4</ZIndex>
+          <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2518,7 +2487,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox57</rd:DefaultName>
-          <Top>1.08877cm</Top>
+          <Top>1.08876cm</Top>
           <Left>11.45647cm</Left>
           <Height>0.6cm</Height>
           <Width>5.59562cm</Width>
@@ -2547,7 +2516,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox56</rd:DefaultName>
-          <Top>1.08877cm</Top>
+          <Top>1.08876cm</Top>
           <Left>0.3175cm</Left>
           <Height>0.6cm</Height>
           <Width>7.55354cm</Width>
@@ -2584,7 +2553,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox55</rd:DefaultName>
-          <Top>0.16329cm</Top>
+          <Top>0.16328cm</Top>
           <Left>0.3175cm</Left>
           <Height>0.6cm</Height>
           <Width>16.73459cm</Width>

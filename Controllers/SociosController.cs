@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Models;
 using System.Data.Entity;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace Controllers
 {
@@ -40,6 +41,7 @@ namespace Controllers
         {
             using (var bd = new Conexion())
             {
+                
                 return bd.asociados.Where(a => a.aso_id == id).FirstOrDefault();
             }
         }
@@ -500,7 +502,7 @@ namespace Controllers
 
                 //ACTUALIZAR COMPROBANTE DE DOMICILIO
                 bd.Database.ExecuteSqlCommand("UPDATE comprobante SET com_comprobante = {0} WHERE com_asociado = {1}", comprobante, id);
-                
+
                 //ACTUALIZAR IDENTIFICACION (delantera)
                 bd.Database.ExecuteSqlCommand("UPDATE identificacion SET ide_identificacion = {0} WHERE ide_asociado = {1} AND ide_lado = 'DELANTERA'", identificaciondel, id);
 

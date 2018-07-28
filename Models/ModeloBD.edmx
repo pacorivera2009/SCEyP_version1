@@ -1519,6 +1519,14 @@ advertencia 6002: La tabla o vista 'def.bdcasaprestamos.v_rep_ticket' no tiene d
             <PropertyRef Name="ope_id" />
             <PropertyRef Name="ope_fecha" />
             <PropertyRef Name="ope_hora" />
+            <PropertyRef Name="pag_id" />
+            <PropertyRef Name="pag_credito" />
+            <PropertyRef Name="pag_importe" />
+            <PropertyRef Name="pag_interes" />
+            <PropertyRef Name="pag_total" />
+            <PropertyRef Name="pag_fechapago" />
+            <PropertyRef Name="pag_pagado" />
+            <PropertyRef Name="pag_prestamo" />
             <PropertyRef Name="pre_id" />
             <PropertyRef Name="pre_credito" />
             <PropertyRef Name="pre_cuotas" />
@@ -1532,14 +1540,6 @@ advertencia 6002: La tabla o vista 'def.bdcasaprestamos.v_rep_ticket' no tiene d
             <PropertyRef Name="pre_fechaprestamo" />
             <PropertyRef Name="pre_primerpago" />
             <PropertyRef Name="pre_asociado" />
-            <PropertyRef Name="pag_id" />
-            <PropertyRef Name="pag_credito" />
-            <PropertyRef Name="pag_importe" />
-            <PropertyRef Name="pag_interes" />
-            <PropertyRef Name="pag_total" />
-            <PropertyRef Name="pag_fechapago" />
-            <PropertyRef Name="pag_pagado" />
-            <PropertyRef Name="pag_prestamo" />
             <PropertyRef Name="aso_id" />
             <PropertyRef Name="aso_nombre" />
             <PropertyRef Name="aso_apellidos" />
@@ -1573,6 +1573,15 @@ advertencia 6002: La tabla o vista 'def.bdcasaprestamos.v_rep_ticket' no tiene d
           <Property Name="ope_id" Type="bigint" Nullable="false" />
           <Property Name="ope_fecha" Type="date" Nullable="false" />
           <Property Name="ope_hora" Type="timestamp" Precision="0" Nullable="false" />
+          <Property Name="pag_id" Type="bigint" Nullable="false" />
+          <Property Name="pag_credito" Type="decimal" Precision="20" Scale="2" Nullable="false" />
+          <Property Name="pag_importe" Type="decimal" Precision="20" Scale="2" Nullable="false" />
+          <Property Name="pag_interes" Type="decimal" Precision="20" Scale="2" Nullable="false" />
+          <Property Name="pag_total" Type="decimal" Precision="20" Scale="2" Nullable="false" />
+          <Property Name="pag_fechapago" Type="date" Nullable="false" />
+          <Property Name="pag_pagado" Type="decimal" Precision="20" Scale="2" Nullable="false" />
+          <Property Name="pag_fechapagado" Type="date" />
+          <Property Name="pag_prestamo" Type="bigint" Nullable="false" />
           <Property Name="pre_id" Type="bigint" Nullable="false" />
           <Property Name="pre_credito" Type="decimal" Precision="20" Scale="2" Nullable="false" />
           <Property Name="pre_cuotas" Type="int" Nullable="false" />
@@ -1587,15 +1596,6 @@ advertencia 6002: La tabla o vista 'def.bdcasaprestamos.v_rep_ticket' no tiene d
           <Property Name="pre_primerpago" Type="date" Nullable="false" />
           <Property Name="pre_observaciones" Type="varchar" MaxLength="255" />
           <Property Name="pre_asociado" Type="bigint" Nullable="false" />
-          <Property Name="pag_id" Type="bigint" Nullable="false" />
-          <Property Name="pag_credito" Type="decimal" Precision="20" Scale="2" Nullable="false" />
-          <Property Name="pag_importe" Type="decimal" Precision="20" Scale="2" Nullable="false" />
-          <Property Name="pag_interes" Type="decimal" Precision="20" Scale="2" Nullable="false" />
-          <Property Name="pag_total" Type="decimal" Precision="20" Scale="2" Nullable="false" />
-          <Property Name="pag_fechapago" Type="date" Nullable="false" />
-          <Property Name="pag_pagado" Type="decimal" Precision="20" Scale="2" Nullable="false" />
-          <Property Name="pag_fechapagado" Type="date" />
-          <Property Name="pag_prestamo" Type="bigint" Nullable="false" />
           <Property Name="aso_id" Type="bigint" Nullable="false" />
           <Property Name="aso_nombre" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="aso_apellidos" Type="varchar" MaxLength="100" Nullable="false" />
@@ -1958,6 +1958,9 @@ advertencia 6002: La tabla o vista 'def.bdcasaprestamos.v_rep_usuarios' no tiene
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="usp_devolver_id_socio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="bdcasaprestamos">
+          <Parameter Name="vn_id_socio" Type="bigint" Mode="In" />
+        </Function>
         <EntityContainer Name="bdcasaprestamosModelStoreContainer">
           <EntitySet Name="accesos" EntityType="Self.accesos" Schema="bdcasaprestamos" store:Type="Tables" />
           <EntitySet Name="asociados" EntityType="Self.asociados" Schema="bdcasaprestamos" store:Type="Tables" />
@@ -2686,6 +2689,15 @@ FROM `v_rep_tarjeton_prestamos` AS `v_rep_tarjeton_prestamos`</DefiningQuery>
 `v_rep_ticket`.`ope_id`, 
 `v_rep_ticket`.`ope_fecha`, 
 `v_rep_ticket`.`ope_hora`, 
+`v_rep_ticket`.`pag_id`, 
+`v_rep_ticket`.`pag_credito`, 
+`v_rep_ticket`.`pag_importe`, 
+`v_rep_ticket`.`pag_interes`, 
+`v_rep_ticket`.`pag_total`, 
+`v_rep_ticket`.`pag_fechapago`, 
+`v_rep_ticket`.`pag_pagado`, 
+`v_rep_ticket`.`pag_fechapagado`, 
+`v_rep_ticket`.`pag_prestamo`, 
 `v_rep_ticket`.`pre_id`, 
 `v_rep_ticket`.`pre_credito`, 
 `v_rep_ticket`.`pre_cuotas`, 
@@ -2700,15 +2712,6 @@ FROM `v_rep_tarjeton_prestamos` AS `v_rep_tarjeton_prestamos`</DefiningQuery>
 `v_rep_ticket`.`pre_primerpago`, 
 `v_rep_ticket`.`pre_observaciones`, 
 `v_rep_ticket`.`pre_asociado`, 
-`v_rep_ticket`.`pag_id`, 
-`v_rep_ticket`.`pag_credito`, 
-`v_rep_ticket`.`pag_importe`, 
-`v_rep_ticket`.`pag_interes`, 
-`v_rep_ticket`.`pag_total`, 
-`v_rep_ticket`.`pag_fechapago`, 
-`v_rep_ticket`.`pag_pagado`, 
-`v_rep_ticket`.`pag_fechapagado`, 
-`v_rep_ticket`.`pag_prestamo`, 
 `v_rep_ticket`.`aso_id`, 
 `v_rep_ticket`.`aso_nombre`, 
 `v_rep_ticket`.`aso_apellidos`, 
@@ -3025,6 +3028,9 @@ FROM `v_rep_usuarios` AS `v_rep_usuarios`</DefiningQuery>
             <End Role="personal" EntitySet="personal" />
             <End Role="usuarios" EntitySet="usuarios" />
           </AssociationSet>
+          <FunctionImport Name="agregar" ReturnType="Collection(bdcasaprestamosModel.agregar_Result)">
+          <Parameter Name="vn_id_socio" Mode="In" Type="Int64" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="accesos">
           <Key>
@@ -4967,6 +4973,7 @@ FROM `v_rep_usuarios` AS `v_rep_usuarios`</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="agregar_Result" />
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -6126,7 +6133,12 @@ FROM `v_rep_usuarios` AS `v_rep_usuarios`</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          <FunctionImportMapping FunctionImportName="agregar" FunctionName="bdcasaprestamosModel.Store.usp_devolver_id_socio" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="bdcasaprestamosModel.agregar_Result" />
+            </ResultMapping>
+          </FunctionImportMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

@@ -1223,12 +1223,12 @@ namespace Views
                             identificaciontra = ms2.GetBuffer();
                             socioscontroller.agregarIdentificacion(id, identificaciontra, "TRASERA");
 
-                            ////CONVERTIMOS A BYTES --> COMPROBANTE DE DOMICILIO
-                            //byte[] comprobantedom;
-                            //MemoryStream ms3 = new MemoryStream();
-                            //pbxComprobante.Image.Save(ms3, ImageFormat.Jpeg);
-                            //comprobantedom = ms3.GetBuffer();
-                            //socioscontroller.agregarComprobante(id, comprobantedom);
+                            //CONVERTIMOS A BYTES --> COMPROBANTE DE DOMICILIO
+                            byte[] comprobantedom;
+                            MemoryStream ms3 = new MemoryStream();
+                            pbxComprobante.Image.Save(ms3, ImageFormat.Jpeg);
+                            comprobantedom = ms3.GetBuffer();
+                            socioscontroller.agregarComprobante(id, comprobantedom);
 
                             ////AGREGAR FOTO DEL DOMICILIO --> EN CASO QUE SE HAYA TOMADO CAPTURA
                             //if (pbxCapturaDomicilio.Image != null)
@@ -1241,7 +1241,7 @@ namespace Views
                             //    socioscontroller.agregarDomicilio(id, domiciliofoto);
                             //}
 
-                            if(cbxTipoIngreso.SelectedIndex == 0)
+                            if (cbxTipoIngreso.SelectedIndex == 0)
                             {
                                 //ES UN AVAL QUE ES SOCIO
                                 if(avalboolean == false)

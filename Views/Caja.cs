@@ -392,6 +392,7 @@ namespace Views
 
                                     btnPagar.Enabled = false;
 
+
                                     checkBox1.Checked = false;
                                     checkBox2.Checked = false;
                                     checkBox3.Checked = false;

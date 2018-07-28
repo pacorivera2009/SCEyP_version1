@@ -51,6 +51,9 @@
     <Compile Include="accesos.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="agregar_Result.cs">
+      <DependentUpon>ModeloBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="asociados.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>

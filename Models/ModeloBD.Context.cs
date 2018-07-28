@@ -12,6 +12,9 @@ namespace Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Objects;
+    using System.Data.Objects.DataClasses;
+    using System.Linq;
     
     public partial class Conexion : DbContext
     {
@@ -84,5 +87,14 @@ namespace Models
         public DbSet<v_rep_tarjeton_prestamos> v_rep_tarjeton_prestamos { get; set; }
         public DbSet<v_rep_ticket> v_rep_ticket { get; set; }
         public DbSet<v_rep_usuarios> v_rep_usuarios { get; set; }
+    
+        public virtual ObjectResult<agregar_Result> agregar(Nullable<long> vn_id_socio)
+        {
+            var vn_id_socioParameter = vn_id_socio.HasValue ?
+                new ObjectParameter("vn_id_socio", vn_id_socio) :
+                new ObjectParameter("vn_id_socio", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<agregar_Result>("agregar", vn_id_socioParameter);
+        }
     }
 }

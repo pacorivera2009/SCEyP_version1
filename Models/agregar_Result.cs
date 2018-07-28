@@ -10,14 +10,8 @@
 namespace Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class v_rep_socios_adeudo
+    public partial class agregar_Result
     {
-        public long aso_id { get; set; }
-        public string aso_nombre { get; set; }
-        public string aso_domicilio { get; set; }
-        public Nullable<decimal> pag_pagar { get; set; }
-        public Nullable<System.DateTime> pag_fechapago { get; set; }
     }
 }

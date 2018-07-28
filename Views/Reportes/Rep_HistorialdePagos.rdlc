@@ -1251,7 +1251,7 @@
         <DataSetName>DataSetBD</DataSetName>
         <Top>7.06736cm</Top>
         <Height>1.2cm</Height>
-        <Width>17.39417cm</Width>
+        <Width>17.39416cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -1266,7 +1266,7 @@
   <Width>6.8481in</Width>
   <Page>
     <PageHeader>
-      <Height>3.11592cm</Height>
+      <Height>2.63967cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1350,37 +1350,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox13">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>ING. JOSE DE JESUS GARCIA JAUREGUI</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>1.84509cm</Top>
-          <Height>0.6cm</Height>
-          <Width>17.39417cm</Width>
-          <ZIndex>3</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
         <Textbox Name="Textbox15">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -1400,10 +1369,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox5</rd:DefaultName>
-          <Top>2.51592cm</Top>
+          <Top>1.88092cm</Top>
           <Height>0.6cm</Height>
           <Width>17.39417cm</Width>
-          <ZIndex>4</ZIndex>
+          <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1441,6 +1410,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox56</rd:DefaultName>
+          <Top>0cm</Top>
           <Height>0.6cm</Height>
           <Width>7.55354cm</Width>
           <Style>
@@ -1468,6 +1438,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox57</rd:DefaultName>
+          <Top>0cm</Top>
           <Left>11.79855cm</Left>
           <Height>0.6cm</Height>
           <Width>5.59562cm</Width>

@@ -87,6 +87,23 @@ namespace Views
 
                                 txtUsuario.Enabled = false;
 
+                                txtNombre.Text = personal.per_nombre + " " + personal.per_apellidos;
+                                txtSexo.Text = personal.per_sexo;
+                                txtFechaNacimiento.Text = personal.per_fechanacimiento.ToShortDateString();
+                                txtEstadoCivil.Text = personal.per_estadocivil;
+                                txtMovil.Text = personal.per_movil;
+                                txtTelefono.Text = personal.per_telefono;
+                                txtCorreo.Text = personal.per_correoelectronico;
+
+                                fotospersonal = usuarioscontroller.fotospersonal(Convert.ToInt64(txtClave.Text));
+
+                                if (fotospersonal != null)
+                                {
+                                    byte[] fotografia = fotospersonal.fot_fotoperfil;
+                                    System.IO.MemoryStream ms = new System.IO.MemoryStream(fotografia);
+                                    pbxPerfil.Image = Image.FromStream(ms);
+                                }
+
                                 txtUsuario.Text = usuarios.usu_usuario;
                                 txtContrasena.Text = seguridad.Desencriptar(usuarios.usu_contrasena);
                                 txtConfirmar.Text = seguridad.Desencriptar(usuarios.usu_contrasena);
@@ -148,22 +165,7 @@ namespace Views
                                 }
                             }
 
-                            txtNombre.Text = personal.per_nombre + " " + personal.per_apellidos;
-                            txtSexo.Text = personal.per_sexo;
-                            txtFechaNacimiento.Text = personal.per_fechanacimiento.ToShortDateString();
-                            txtEstadoCivil.Text = personal.per_estadocivil;
-                            txtMovil.Text = personal.per_movil;
-                            txtTelefono.Text = personal.per_telefono;
-                            txtCorreo.Text = personal.per_correoelectronico;
-
-                            fotospersonal = usuarioscontroller.fotospersonal(Convert.ToInt64(txtClave.Text));
-
-                            if (fotospersonal != null)
-                            {
-                                byte[] fotografia = fotospersonal.fot_fotoperfil;
-                                System.IO.MemoryStream ms = new System.IO.MemoryStream(fotografia);
-                                pbxPerfil.Image = Image.FromStream(ms);
-                            }
+                            
                         }
                         else
                         {

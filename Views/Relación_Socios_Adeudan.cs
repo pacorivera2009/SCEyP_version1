@@ -53,7 +53,7 @@ namespace Views
                                       c.aso_id,
                                       c.aso_nombre,
                                       c.aso_domicilio,
-                                      aso_por_pagar = c.pag_pagar.ToString("C"),
+                                      aso_por_pagar = c.pag_pagar,
                                       c.pag_fechapago
                                   };
 
@@ -81,7 +81,7 @@ namespace Views
                                       c.aso_id,
                                       c.aso_nombre,
                                       c.aso_domicilio,
-                                      aso_por_pagar = c.pag_pagar.ToString("C"),
+                                      aso_por_pagar = c.pag_pagar,
                                       c.pag_fechapago
                                   };
 
@@ -127,7 +127,7 @@ namespace Views
                                   c.aso_id,
                                   c.aso_nombre,
                                   c.aso_domicilio,
-                                  aso_por_pagar = c.pag_pagar.ToString("C"),
+                                  aso_por_pagar = c.pag_pagar,
                                   c.pag_fechapago
                               };
 
@@ -163,7 +163,7 @@ namespace Views
                                   c.aso_id,
                                   c.aso_nombre,
                                   c.aso_domicilio,
-                                  aso_por_pagar = c.pag_pagar.ToString("C"),
+                                  aso_por_pagar = c.pag_pagar,
                                   c.pag_fechapago
                               };
 
@@ -203,7 +203,7 @@ namespace Views
                                       c.aso_id,
                                       c.aso_nombre,
                                       c.aso_domicilio,
-                                      aso_por_pagar = c.pag_pagar.ToString("C"),
+                                      aso_por_pagar = c.pag_pagar,
                                       c.pag_fechapago
                                   };
 
